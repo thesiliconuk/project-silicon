@@ -1,0 +1,30 @@
+body{
+    margin: 2%;
+    outline: 3px solid black;
+}
+
+.inline-block-child {
+    display: inline-block;
+}
+
+.headerLogo{
+    display: inline;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline;
+}
+
+.headerSmall{
+    background-color: rgb(0, 0, 80);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
+.headerSmall a{
+    color: white;
+    text-decoration: none;
+    font-family: "Helvetica";
+    font-size: 1.25em;
+    margin: 1%;
+}
