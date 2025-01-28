@@ -1,15 +1,6 @@
 html, body {
     margin: 0;
-}
-
-.dark-mode {
-    background-color: black;
-    color: white;
-    
-}
-.dark-mode h1{
-    color: white;
-    
+    background-color: rgb(15, 15, 15);
 }
 
 .headerBanner{
@@ -19,15 +10,13 @@ html, body {
 
 .headerBanner h1{
     font-family: Helvetica;
-    color: rgb(0, 0, 80);
+    color: rgb(255, 255, 255);
     margin: 12px;
     margin-top: 23px;
 }
 
 .darkmodebutton{
     background-color: rgb(255, 255, 255); 
-    border: none;
-    color: rgb(0,0,0);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -57,6 +46,3 @@ html, body {
     cursor: pointer;
 }
 
-.headerLinks p:hover{
-    color: black;
-}

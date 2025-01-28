@@ -7,7 +7,7 @@
     <script>
     function toggleTheme() {
             let theme = document.getElementById('theme');
-
+        
             if (theme.getAttribute('href') == 'light.css') {
                 theme.setAttribute('href', 'dark.css');
             } else {
@@ -36,9 +36,9 @@
             <a href="newsletters.html">Newsletters</a>
             <a href="wallpapers.html">Wallpapers</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="#"onclick="toggleTheme()">Dark mode</a>
-            <a href="login.html">Login</a>
+            <a href="contact.html">Contact</a> 
+            <!-- <button class="darkmodebutton" onclick="toggleDarkMode()">Toggle dark mode</button> Couldnt be bothered to reapply styling for the button so here you go -->
+            <a onclick="toggleTheme()">Dark mode</a>
         </div>
     </header>   
 </body>
