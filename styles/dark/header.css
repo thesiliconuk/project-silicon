@@ -1,16 +1,7 @@
 html, body {
     margin: 0;
+    background-color: rgb(22, 22, 22);
     transition: background-color 0.2s, color 0.2s, image-rendering 0.2s;
-}
-
-.dark-mode {
-    background-color: black;
-    color: white;
-    
-}
-.dark-mode h1{
-    color: white;
-    
 }
 
 .headerBanner{
@@ -20,20 +11,11 @@ html, body {
 
 .headerBanner h1{
     font-family: Helvetica;
-    color: rgb(0, 0, 80);
+    color: rgb(255, 255, 255);
     margin: 12px;
     margin-top: 23px;
 }
 
-.darkmodebutton{
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;  
-    cursor: pointer;
-}
 .headerLinks{
     background-color: rgb(0, 0, 80);
     padding: 12px;
@@ -54,12 +36,4 @@ html, body {
     text-decoration: none; 
     text-align: right;
     cursor: pointer;
-}
-
-.headerLinks p:hover{
-    color: black;
-}
-
-.aboutus {
-    margin-left: 40%;
 }
