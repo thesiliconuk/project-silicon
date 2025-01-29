@@ -48,7 +48,18 @@ html, body {
     cursor: pointer;
 }
 
-.headerLink p:hover {
-    text
+.headerLinks p:hover {
+    text-decoration: underline;
 }
 
+.about {
+    color: white; 
+}
+
+p{
+    color: white;
+}
+
+h1{
+    color: white;
+}

@@ -4,25 +4,8 @@
     <title>The Silicon</title>
     <link id="theme" rel="stylesheet" type="text/css" href="light.css">
     <!-- This is the script that changes the theme of the website -->
-    <script>
-    function toggleTheme() {
-            let theme = document.getElementById('theme');
-
-            if (theme.getAttribute('href') == 'light.css') {
-                theme.setAttribute('href', 'dark.css');
-            } else {
-                theme.setAttribute('href', 'light.css');
-            }
-
-            let img = document.getElementById('img');
-
-            if (img.getAttribute('src') == 'images/logo-light.png') {
-                img.setAttribute('src', 'images/logo-dark.png');
-            } else {
-                img.setAttribute('src', 'images/logo-light.png');
-            }
-        }
-    </script>
+    <script src="./toggletheme.js"></script>
+    <meta name="google-adsense-account" content="ca-pub-2889734020737326">
 </head>
 <body>
     <!-- This is the header with the hyperlinks -->
