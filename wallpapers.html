@@ -1,47 +1,117 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <!-- Styling -->
-    <link id="header-css" rel="stylesheet" type="text/css" href="styles/light/header.css">
-    <link id="text-css" rel="stylesheet" type="text/css" href="styles/light/text.css">
-    <script src="./toggletheme.js"></script>
-    <!-- Google Analytics -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2889734020737326"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Selection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fcfcfc;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .section {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .section-natural:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .section-abstract:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .section-natural {
+            color: white;
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .section-abstract {
+            color: rgb(0, 0, 0);
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+    </style>
 </head>
 <body>
-    <!-- This is the header with the hyperlinks -->
-    <header> 
-        <div class="headerBanner">
-            <a href="index.html">    
-                <img id="img" src="images/logo-light.png" alt="The Silicon Logo" width="117px">
-            </a>    
-                <h1>The <br>Silicon</h1>
-        </div>
-        <div class="headerLinks">
-            <a href="/">Home</a>
-            <a href="/newsletters">Newsletters</a>
-            <a href="/wallpapers">Wallpapers</a>
-            <a href="https://x.com">Social Media</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <a href="#"onclick="toggleTheme()">Dark mode</a>
-            <a href="/login">Login</a>
-        </div>
-    </header>
-    <div style="margin: 2%;">
-        <h1>Wallpapers</h1>
-        <p>Here you can find a collection of wallpapers carefully handpicked by the writers and editors of the silicon to give you the best, freshest look for your device.</p>
-        <div class="wallpaperCatogories" style="display: inline;">
-            <div class="abstractWallpaperCatogory">
-                <img src="wallpapers/abstract-thumbnail.webp" alt="Abstract Wallpaper" height="200px">
-            </div>
-            <div class="natureWallpaperCatogory">
-                <img src="wallpapers/nature-wallpapaer-thumbnail.jpg" alt="Nature Wallpaper" height="200px">
-          </div>
-        </div>
 
+
+    <div class="container">
+        <a href="natural.html" class="section-natural">Natural</a>
+        <a href="abstract.html" class="section-abstract">Abstract</a>
     </div>
 
+    <a href="index" class="back">Back to home</a>
+
 </body>
-</html> 
+</html>
+
+<style>
+     .back {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: rgb(0,0,80);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        .back:hover {
+            background: #0056b3;
+        }
+        
+</style>
+
+
