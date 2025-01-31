@@ -1,6 +1,5 @@
 html, body {
     margin: 0;
-    transition: background-color 0.2s, color 0.2s, image-rendering 0.2s;
     background-color: white;
 }
 
