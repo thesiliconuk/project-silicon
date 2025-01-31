@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     background-color: rgb(22, 22, 22);
-    transition: background-color 0.2s, color 0.2s, image-rendering 0.2s;
 }
 
 .headerBanner{
