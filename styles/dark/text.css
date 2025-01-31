@@ -1,29 +1,12 @@
 
 .about {
-    color: white;
+    color: black;
     font-family: Helvetica;
 }
 
-p{
+h1, h2, h3, h4, h5, h6, p{
     color: white;
     font-family: Helvetica;
     margin: 2%;
 }
 
-h1{
-    color: white;
-    font-family: Helvetica;
-    margin: 2%;
-}
-
-h2{
-    color: white;
-    font-family: Helvetica;
-    margin: 2%;
-}
-
-h3{
-    color: white;
-    font-family: Helvetica;
-    margin: 2%;
-}
