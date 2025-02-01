@@ -1,0 +1,12 @@
+.articlelist img{
+    border-radius: 5%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+.articlelist p{
+    margin-bottom: 1%;
+}
+
+.articlelist{
+    border-bottom: 3px solid white;
+}
