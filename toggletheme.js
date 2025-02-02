@@ -1,15 +1,23 @@
 function setTheme(theme) {
     let header = document.getElementById('header-css');
-    header.setAttribute('href', `/styles/${theme}/header.css`);
+    if (header) {
+        header.setAttribute('href', `/styles/${theme}/header.css`);
+    }
 
     let text = document.getElementById('text-css');
-    text.setAttribute('href', `/styles/${theme}/text.css`);
+    if (text) {
+        text.setAttribute('href', `/styles/${theme}/text.css`);
+    }
 
     let articlelist = document.getElementById('articlelist-css');
-    articlelist.setAttribute('href', `/styles/${theme}/articlelist.css`);
+    if (articlelist) {
+        articlelist.setAttribute('href', `/styles/${theme}/articlelist.css`);
+    }
 
     let img = document.getElementById('img');
-    img.setAttribute('src', `/images/logo-${theme}.png`);
+    if (img) {
+        img.setAttribute('src', `/images/logo-${theme}.png`);
+    }
 
     localStorage.setItem('theme', theme);
 }
@@ -27,6 +35,7 @@ function toggleTheme() {
 }
 function onLoadFunctions() {
     let themeOnLoad = localStorage.getItem('theme');
+    console.log('onLoadFunctions called, theme:', themeOnLoad);
     if (themeOnLoad !== 'light' && themeOnLoad !== 'dark') {
         themeOnLoad = 'light';
     }
