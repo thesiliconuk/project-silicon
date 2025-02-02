@@ -1,12 +1,15 @@
 function setTheme(theme) {
     let header = document.getElementById('header-css');
-    header.setAttribute('href', `styles/${theme}/header.css`);
+    header.setAttribute('href', `/styles/${theme}/header.css`);
 
     let text = document.getElementById('text-css');
-    text.setAttribute('href', `styles/${theme}/text.css`);
+    text.setAttribute('href', `/styles/${theme}/text.css`);
+
+    let articlelist = document.getElementById('articlelist-css');
+    articlelist.setAttribute('href', `/styles/${theme}/articlelist.css`);
 
     let img = document.getElementById('img');
-    img.setAttribute('src', `images/logo-${theme}.png`);
+    img.setAttribute('src', `/images/logo-${theme}.png`);
 
     localStorage.setItem('theme', theme);
 }

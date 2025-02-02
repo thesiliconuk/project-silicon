@@ -4,26 +4,19 @@
     font-family: Helvetica;
 }
 
-p{
-    color: black;
-    font-family: Helvetica;
-    margin: 2%;
-}
-
 h1{
     color: rgb(0, 0, 80);
     font-family: Helvetica;
     margin: 2%;
 }
 
-h2{
-    color: white;
+h2, h3, h4, h5, h6, p{
+    color: black;
     font-family: Helvetica;
     margin: 2%;
 }
 
-h3{
-    color: white;
-    font-family: Helvetica;
-    margin: 2%;
+a {
+    color: black;
+    text-decoration: none;
 }
