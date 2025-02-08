@@ -10,6 +10,7 @@
     <!-- Google Analytics -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2889734020737326"
      crossorigin="anonymous"></script>
+    <script type="module" src="/scripts/comment.js"></script>
 </head>
 <body>
     <!-- This is the header with the hyperlinks -->
@@ -66,16 +67,19 @@ Venture for us to become one of the largest tech news outlets in the world. </p>
 
 <p>You may notice that no UI designer or website builder was mentioned, this is because we wanted to code this website raw, from the ground up to expand our coding knowledge and be ready to make more projects in the future. However, if we <i> could </i> restart we would probably use Figma to design everything first and then get on with coding because designing things was really just trial and error like getting the correct font sizes was a nightmare! </p>
 
-
-
-  
-   
-
-    
-        
-
-   
+<div id="comments-section" style="margin-top: 50px; text-align: left;">
+    <div id="comment-form" style="margin-top: 20px;">
+        <h2>Leave a Comment</h2>
+        <form style="margin-left: 2%;">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <h2>Comments</h2>
+    <div id="comments-container"></div>
+</div>
 </body>
-
-
 </html> 

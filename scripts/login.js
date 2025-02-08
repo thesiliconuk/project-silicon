@@ -48,10 +48,6 @@ submit.addEventListener('click', function (event) {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            if (errorCode === 'auth/user-not-found') {
-                alert('User not found');
-                return;
-            }
             alert(errorMessage);
             // ..
     });
