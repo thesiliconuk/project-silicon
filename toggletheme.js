@@ -33,13 +33,14 @@ function toggleTheme() {
     }
     setTheme(themeToggle);
 }
-function onLoadFunctions() {
+    
+(function () {
     let themeOnLoad = localStorage.getItem('theme');
     console.log('onLoadFunctions called, theme:', themeOnLoad);
     if (themeOnLoad !== 'light' && themeOnLoad !== 'dark') {
         themeOnLoad = 'light';
     }
-    setTheme(themeOnLoad);
-}
-
-window.onload = onLoadFunctions;
+    window.addEventListener('load', function() {
+        setTheme(themeOnLoad);
+    });
+})();
