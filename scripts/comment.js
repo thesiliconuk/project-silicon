@@ -29,16 +29,23 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const articleName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).slice(0, -5);
+const articleName = getArticleName();
 
 console.log('Firebase initialized');
-console.log('Article Name:', articleName);
 
 function getFormattedDate() {
     const date = new Date(2025, 1, 4);
     const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-GB', options);
     return formattedDate;
+}
+
+function getArticleName() {
+    if (location.pathname.endsWith(".html")) {
+        return location.pathname.substring(location.pathname.lastIndexOf("/") + 1).slice(0, -5);
+    } else {
+        return location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+    }
 }
 
 // Ensure the submit button exists
@@ -49,6 +56,8 @@ if (submit) {
         var name = document.getElementById('name').value;
         var comment = document.getElementById('comment').value;
         var date = getFormattedDate();
+
+        console.log('Article Name:', articleName);
 
         console.log('Name:', name);
         console.log('Comment:', comment);
