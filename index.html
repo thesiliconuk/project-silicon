@@ -29,32 +29,26 @@
             <a href="https://www.youtube.com/@thesiliconofficial">Social Media</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
-            <a href="#"onclick="toggleTheme()">Dark mode</a>
-            <a href="/login">Login</a>
+            <a href="#" onclick="toggleTheme()">Dark mode</a>
+            <a id="publish-article-link" style="display: none;" href="/create-article">Publish Article</a>
+            <a id="login-logout-link" href="/login">Login</a>
         </div>
     </header>
 
     <h1 style="color: rgb(105, 164, 237); margin-bottom: 1%;">Latest news </h1>
     <p style="margin-top: 0%;">New articles published around twice a day from 16:00 - 19:00 GMT</p>
-    <style>
-
-    </style>
-    <div class="articlelist-container">
-            <div class="articlelist">
-                <a href="/articles/iphone-se-4">
-                <h2 style="color: rgb(105,164,237)">iPhone SE 4</h2>
-                <p><i>Published Fri 7 Feb 2025 | Written by Badie Badie</i></p>
-                <img src="/images/Articles/iPhone SE 4/banner.jpg" width="80%">
-                </a>
-            </div>
-            <div class="articlelist">
-                <a href="/articles/hello-world">
-                <h2 style="color: rgb(105,164,237)">Hello, world!</h2>
-                <p><i>Published Sat 2 Feb 2025 | Written by the team</i></p>
-                <img src="/images/Articles/Hello, world/banner.jpeg" width="80%">
-                </a>
+    
+    <div class="articlelist-container" id="articles-container">
+        <!-- Articles will be dynamically inserted here -->
     </div>
-        
+
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="article-content" style="white-space: pre-wrap;">
+                <!-- Article content will be dynamically inserted here -->
+            </div>
+        </div>
     </div>
 
     <footer class="footer1">
@@ -68,6 +62,144 @@
             text-align: center;
             padding: 1%;
         }
-        </style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .articlelist a h2 {
+            margin-bottom: 0.5rem; /* Adjust this value to reduce the gap */
+        }
+        .articlelist a p {
+            margin-top: 0; /* Ensure no margin at the top of the paragraph */
+        }
+    </style>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6eRdhg6EtrRPGA423DJIEIndaWy9UUZA",
+            authDomain: "silicon-articles.firebaseapp.com",
+            projectId: "silicon-articles",
+            storageBucket: "silicon-articles.appspot.com",
+            messagingSenderId: "404018682364",
+            appId: "1:404018682364:web:4e60dd8548f29231eeba79"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        async function fetchArticles() {
+            const articlesContainer = document.getElementById('articles-container');
+            const querySnapshot = await getDocs(collection(db, "articles"));
+            querySnapshot.forEach(async (docSnapshot) => {
+                const article = docSnapshot.data();
+                const authorRef = doc(db, "users", article.authorId);
+                const authorSnap = await getDoc(authorRef);
+                const authorName = authorSnap.exists() ? authorSnap.data().name : "Unknown Author";
+
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('articlelist');
+                articleElement.innerHTML = `
+                    <a href="#" data-id="${docSnapshot.id}">
+                        <h2 style="color: rgb(105,164,237)">${article.title}</h2>
+                        <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${authorName}</i></p>
+                        <img src="${article.bannerURL}" width="80%">
+                    </a>
+                `;
+                articleElement.querySelector('a').addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    await openArticleModal(docSnapshot.id);
+                });
+                articlesContainer.appendChild(articleElement);
+            });
+        }
+
+        async function openArticleModal(articleId) {
+            const modal = document.getElementById('article-modal');
+            const articleContent = document.getElementById('article-content');
+            const docRef = doc(db, "articles", articleId);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                const article = docSnap.data();
+                const authorRef = doc(db, "users", article.authorId);
+                const authorSnap = await getDoc(authorRef);
+                const authorName = authorSnap.exists() ? authorSnap.data().name : "Unknown Author";
+
+                articleContent.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${authorName}</i></p>
+                    <img src="${article.bannerURL}" width="80%" style="border-radius: 20px;">
+                    <p>${article.content}</p>
+                `;
+                applyThemeToModal();
+                modal.style.display = "block";
+            } else {
+                console.log("No such document!");
+            }
+        }
+
+        function applyThemeToModal() {
+            const modalContent = document.querySelector('.modal-content');
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                modalContent.style.backgroundColor = 'rgb(22, 22, 22)';
+                modalContent.style.color = 'white';
+                modalContent.style.border = '1px solid black';
+            } else {
+                modalContent.style.backgroundColor = 'white';
+                modalContent.style.color = 'black';
+                modalContent.style.border = '1px solid white';
+
+            }
+        }
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('article-modal').style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('article-modal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Fetch articles regardless of authentication state
+        fetchArticles();
+    </script>
+    <script type="module" src="/scripts/linkeEligibility.js"></script>
+
 </body>
-</html> 
+</html>
