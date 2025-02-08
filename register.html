@@ -9,7 +9,6 @@
     <!-- Google Analytics -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2889734020737326"
      crossorigin="anonymous"></script>
-     <script type="module" src="/scripts/register.js" defer></script>
 </head>
 <body>
     <!-- This is the header with the hyperlinks -->
@@ -30,15 +29,20 @@
             <a href="/login">Login</a>
         </div>
     </header>
-    <h1 style="color: rgb(105, 164, 237); margin-bottom: 1%;">Login</h1>
+    <h1 style="color: rgb(105, 164, 237); margin-bottom: 1%;">Register</h1>
     <style>
         
     </style>
-    <form class="login-form" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <form class="register-form" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <div style="margin-bottom: 10px;">
            <label for="email">Email</label>
            <br>
             <input type="email" id="email" name="email" required>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="name">Name</label>
+            <br>
+            <input type="name" id="name" name="name" required>
         </div>
         <div style="margin-bottom: 10px;">
             <label for="password">Password</label>
@@ -51,4 +55,6 @@
         <h4 style="margin-top: 0%;">Already have an account? <a href="/login">Login</a></h4>
     </form>
 </body>
+<script type="module" src="/scripts/register.js"></script>
+
 </html> 
