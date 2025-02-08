@@ -9,4 +9,15 @@
 
 .articlelist{
     border-bottom: 3px solid white;
+    margin-left: 2%;
+}
+
+.articlelist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.articlelist {
+    width: 48%;
+    margin-bottom: 20px;
 }
