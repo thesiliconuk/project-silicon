@@ -26,7 +26,7 @@ submit.addEventListener('click', async function (event) {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             await setDoc(doc(db, "users", user.uid), {
-                name: name,
+                name : name,
                 email: email
             });
             alert('User signed up');

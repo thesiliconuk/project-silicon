@@ -69,7 +69,7 @@ if (submit) {
             comment: comment,
             date: date,
         }).then(() => {
-            alert('Comment added');
+            alert('Comment added successfully');
         }).catch((error) => {
             console.error('Error adding comment:', error);
         });
