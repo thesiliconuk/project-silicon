@@ -124,25 +124,36 @@
 
         async function fetchArticles() {
             const articlesContainer = document.getElementById('articles-container');
-            const querySnapshot = await getDocs(collection(db, "articles"));
-            querySnapshot.forEach(async (docSnapshot) => {
+            const articlesQuery = query(collection(db, "articles"), orderBy("createdAt", "desc"));
+            const querySnapshot = await getDocs(articlesQuery);
+            
+            const articles = [];
+            for (const docSnapshot of querySnapshot.docs) {
                 const article = docSnapshot.data();
                 const authorRef = doc(db, "users", article.authorId);
                 const authorSnap = await getDoc(authorRef);
                 const authorName = authorSnap.exists() ? authorSnap.data().name : "Unknown Author";
+                
+                articles.push({
+                    id: docSnapshot.id,
+                    ...article,
+                    authorName
+                });
+            }
 
+            articles.forEach(article => {
                 const articleElement = document.createElement('div');
                 articleElement.classList.add('articlelist');
                 articleElement.innerHTML = `
-                    <a href="#" data-id="${docSnapshot.id}">
+                    <a href="#" data-id="${article.id}">
                         <h2 style="color: rgb(105,164,237)">${article.title}</h2>
-                        <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${authorName}</i></p>
+                        <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${article.authorName}</i></p>
                         <img src="${article.bannerURL}" width="80%">
                     </a>
                 `;
                 articleElement.querySelector('a').addEventListener('click', async (event) => {
                     event.preventDefault();
-                    await openArticleModal(docSnapshot.id);
+                    await openArticleModal(article.id);
                 });
                 articlesContainer.appendChild(articleElement);
             });
