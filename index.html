@@ -29,7 +29,7 @@
             <a href="https://www.youtube.com/@thesiliconofficial-uk">Social Media</a>
             <a href="/about">About</a>
             <a href="#" onclick="toggleTheme()">Dark mode</a>
-            <a id="publish-article-link" style="display: none;" href="/create-article">Publish Article</a>
+            <a id="admin-panel-link" style="display: none;" href="/admin">Admin Panel</a>
             <a id="login-logout-link" href="/login">Login</a>
         </div>
     </header>
@@ -57,10 +57,22 @@
         </div>
     </div>
 
-    
+    <!-- Admin Panel -->
+    <div id="admin-panel" style="display: none;">
+        <h2>Admin Panel</h2>
+        <div>
+            <h3>Ban User</h3>
+            <input type="text" id="ban-user-id" placeholder="User ID">
+            <button onclick="banUser()">Ban User</button>
+        </div>
+        <div>
+            <h3>Delete Comment</h3>
+            <input type="text" id="delete-comment-id" placeholder="Comment ID">
+            <button onclick="deleteComment()">Delete Comment</button>
+        </div>
+    </div>
 
     <style>
-    
         .modal {
             display: none;
             position: fixed;
@@ -106,8 +118,8 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-        import { getFirestore, collection, getDocs, doc, getDoc, addDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+        import { getFirestore, collection, getDocs, doc, getDoc, addDoc, query, orderBy, setDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+        import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyC6eRdhg6EtrRPGA423DJIEIndaWy9UUZA",
@@ -249,6 +261,33 @@
         }
 
         fetchArticles();
+
+        // Function to ban a user
+        async function banUser() {
+            const userId = document.getElementById('ban-user-id').value;
+            const userRef = doc(db, "users", userId);
+            await updateDoc(userRef, { banned: true });
+            alert('User has been banned.');
+        }
+
+        // Function to delete a comment
+        async function deleteComment() {
+            const commentId = document.getElementById('delete-comment-id').value;
+            const commentRef = doc(db, "comments", commentId);
+            await deleteDoc(commentRef);
+            alert('Comment has been deleted.');
+        }
+
+        // Function to show admin panel if user is admin
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const userRef = doc(db, "users", user.uid);
+                const userSnap = await getDoc(userRef);
+                if (userSnap.exists() && userSnap.data().isAdmin) {
+                    document.getElementById('admin-panel').style.display = 'block';
+                }
+            }
+        });
     </script>
     <script type="module" src="/scripts/linkeEligibility.js"></script>
 

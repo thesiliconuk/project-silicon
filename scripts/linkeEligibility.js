@@ -17,14 +17,21 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, async (user) => {
     const publishArticleLink = document.getElementById('publish-article-link');
+    const adminPanelLink = document.getElementById('admin-panel-link');
     const loginLogoutLink = document.getElementById('login-logout-link');
     if (user) {
         const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists() && userDoc.data().role === 'admin') {
-            publishArticleLink.style.display = 'inline';
+        if (userDoc.exists() && userDoc.data().banned) {
+            alert('Your account has been banned.');
+            await auth.signOut();
+            window.location.href = '/login';
+        } else if (userDoc.exists() && userDoc.data().role === 'admin') {
+            adminPanelLink.style.display = 'inline';
+            
         }
         loginLogoutLink.textContent = 'Logout';
         loginLogoutLink.href = '#';
+        
         loginLogoutLink.addEventListener('click', async (event) => {
             event.preventDefault();
             await signOut(auth);
