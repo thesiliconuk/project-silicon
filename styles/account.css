@@ -1,0 +1,122 @@
+.account-container {
+  margin-left: 67px;
+  display: flex;
+  flex-direction: row;
+}
+
+.account-overview{
+    background-color: #31317E;
+    border: 2px solid #C2B895;
+    border-radius: 30px;
+    box-shadow: 20px 20px #131313, 20px 20px 0 2px #C2B895;
+    display: inline-block;
+    padding-top: 4px;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 10px;
+}
+
+#account-overview-name{
+    margin-bottom: 2px;
+}
+
+#account-overview-email{
+    margin-top: 2px;
+}
+
+.account-links{
+    margin-top: 45px;
+
+    background-color: #2F2F2F;
+    border: 2px solid #C2B895;
+    border-radius: 30px;
+    box-shadow: 20px 20px #131313, 20px 20px 0 2px #C2B895;
+    display: inline-block;
+    padding-top: 6px;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 12px;
+}
+
+.account-links p{
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.account-links p:hover{
+    color: #C2B895;
+    cursor: pointer;
+}
+
+.account-links p:first-child{
+    margin-top: 15px;
+}
+
+.account-links:last-child p{
+    margin-bottom: 15px;
+}
+
+.account-links p:not(:last-child)::after {
+    content: "";
+    margin-left: -23px;
+    margin-right: -23px;
+    display: block;
+    margin-top: 20px;
+    width: 119%;
+    height: 2px;
+    background: #C2B895;
+    transition: width .3s;
+}
+
+.left-rail{
+    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.main-rail{
+    margin-left: 50px;
+    margin-right: 80px;
+    width: 65%;
+    border: 2px solid #C2B895;
+    border-radius: 30px;
+    box-shadow: 20px 20px #131313, 20px 20px 0 2px #C2B895;
+
+    padding: 15px;
+}
+
+.comment-delete-button{
+    border: 2px solid #C2B895;
+    border-radius: 40px;
+    background-color: #9C0000;
+    box-shadow: 15px 15px #131313, 15px 15px 0 2px #C2B895;
+
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.comment-delete-button:hover{
+    cursor: pointer;
+}
+
+.comment-delete-button:active{
+    box-shadow: 5px 5px #131313, 5px 5px 0 2px #C2B895;
+}
+
+.comment-container:not(:first-child){
+    margin-top: 70px;
+}
+
+.comment-container:last-child{
+    margin-bottom: 20px;
+}
+
+#account-links-admin-panel{
+    display: none;
+}

@@ -1,9 +1,35 @@
+.articlelist img {
+    border-radius: 5%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.articlelist p {
+    margin-bottom: 1%;
+}
+
+.articlelist {
+    margin-left: 2%;
+    width: 48%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
 .articlelist-container {
+    margin-top: 70vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
 }
-.articlelist {
-    width: 48%;
-    margin-bottom: 20px;
+
+.articlelist:nth-child(1n)::after {
+    content: '';
+    margin-left: -10%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%; /* Cover both articles in the row */
+    height: 3px;
+    background-color: white;
 }

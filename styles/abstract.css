@@ -1,0 +1,23 @@
+#wallpapers-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper{
+    display: flex;
+    flex-direction: row;
+    margin-left: 93px;
+    margin-right: 93px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+.wallpaper img{
+    width: 550px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.wallpaper p{
+    font-size: 30px;
+    text-align: center;
+}

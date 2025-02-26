@@ -1,42 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+<title>Admin Panel - The Silicon</title>
 <head>
-    <meta charset="UTF-8">
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="/styles/main.css"> 
-    <link rel="stylesheet" href="/styles/admin.css">
+    <!-- Styling -->
+    <link id="header-css" rel="stylesheet" type="text/css" href="/styles/light/header.css">
+    <link id="text-css" rel="stylesheet" type="text/css" href="/styles/light/text.css">
+    <link id="favicon" rel="icon" type="image/x-icon" href="/images/logo-light.png">
+    <link id="articlelist-css" rel="stylesheet" type="text/css" href="styles/light/articlelist.css">
+    <script src="./toggletheme.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2889734020737326"
+     crossorigin="anonymous"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
-
-    <script src="/scripts/accountPage.js" type="module"></script>
-    <script src="/scripts/scrollreveal.js"></script>
-    <script>
-        // Reset the scroll position on page load
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-    </script>
 </head>
 <body>
-
-    <header class="navbar">
-        <a href="/" class="navbar-link">Home</a>
-        <a href="/wallpapers" class="navbar-link">Wallpapers</a>
-        <a href="#" class="navbar-link">Social Media</a>
-        <a href="/about" class="navbar-link">About us</a>
-
-        <!--Signed out-->
-        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
-        <a href="/login" id="login" class="special-navbar-link">Log in</a>
-
-        <!--Signed in-->
-        <a href="/account" id="account" class="special-navbar-link">Account</a>
-        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
+    <!-- This is the header with the hyperlinks -->
+    <header> 
+        <div class="headerBanner">
+            <a href="index.html">    
+                <img id="img" src="images/logo-light.png" alt="The Silicon Logo" width="117px">
+            </a>    
+                <h1 style="font-family: Helvetica;">the <br>Silicon</h1>
+        </div>
+        <div class="headerLinks">
+            <a href="/">Home</a>
+            <a href="/wallpapers">Wallpapers</a>
+            <a href="https://www.youtube.com/@thesiliconofficial-uk">Social Media</a>
+            <a href="/about">About</a>
+            <a href="#" onclick="toggleTheme()">Dark mode</a>
+            <a id="admin-panel-link" style="display: none;" href="/admin">Admin Panel</a>
+            <a id="login-logout-link" href="/login">Login</a>
+        </div>
     </header>
 
-    <h1 style="margin-top: 125px; margin-left: 67px;">Admin Panel</h1>
-   
+    <h1 style="color: rgb(105, 164, 237); margin-bottom: 1%;">Admin Panel</h1>
+    
     <div id="admin-panel" style="margin-left: 2%;">
         <div style="display: flex; max-width: fit-content; margin-left: auto; margin-right: auto;">
             <div style="margin-right: 20px;">
@@ -160,7 +159,7 @@
             padding: 8px;
         }
         th {
-            background-color: #000000;
+            background-color: #f2f2f2;
             text-align: left;
             cursor: pointer;
         }
@@ -374,7 +373,7 @@
             table.setAttribute('data-sort-asc', !isAscending);
         }
     </script>
+    <script type="module" src="/scripts/linkeEligibility.js"></script>
 
-    <script src="/scripts/linkeEligibility.js" type="module"></script>
 </body>
 </html>
