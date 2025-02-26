@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natural Wallpapers</title>
+    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/natural.css">
+
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
+
+    <script src="/scripts/scrollreveal.js"></script>
+    <script>
+        // Reset the scroll position on page load
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            fetchWallpapers();
+        });
+
+        // Add event listener to elements with class 'wallpaper-lets-go-link'
+        document.querySelectorAll('.wallpaper-lets-go-link').forEach(element => {
+            element.addEventListener('click', function() {
+                const link = element.getAttribute('href');
+                window.location.href = link;
+            });
+        });
+
+        // Fetch wallpapers from the JSON file
+        async function fetchWallpapers() {
+            try {
+                const response = await fetch('/images/natural/wallpapers.json', {
+                    method: 'GET'
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                displayWallpapers(data);
+            } catch (error) {
+                console.error('Error fetching wallpapers:', error);
+            }
+        }
+
+        function displayWallpapers(wallpapers) {
+            const container = document.getElementById('wallpapers-container');
+            wallpapers.forEach(wallpaper => {
+                const wallpaperElement = document.createElement('div');
+                wallpaperElement.className = 'wallpaper';
+                wallpaperElement.innerHTML = `
+                    <img src="${wallpaper.url}" alt="${wallpaper.name}">
+                `;
+                container.appendChild(wallpaperElement);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/wallpapers" class="navbar-link">Wallpapers</a>
+        <a href="#" class="navbar-link">Social Media</a>
+        <a href="/about" class="navbar-link">About us</a>
+
+        <!--Signed out-->
+        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
+        <a href="/login" id="login" class="special-navbar-link">Log in</a>
+
+        <!--Signed in-->
+        <a href="/account" id="account" class="special-navbar-link">Account</a>
+        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
+    </header>
+
+    <p style="
+    text-align: center;
+    margin-top: 150px;
+    font-size: 25px;"
+    >Images photographed by the editors of thesilicon to give your device a calming and welcoming feel</p>
+
+    <div id="wallpapers-container" style="text-align: center; margin-top: 50px;"></div>
+
+    <script src="/scripts/linkeEligibility.js" type="module"></script>
+</body>
+</html>

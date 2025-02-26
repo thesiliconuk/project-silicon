@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
     <script src="/scripts/scrollreveal.js"></script>
-    <script type="module" src="/scripts/login.js" defer></script>
+    <script type="module" src="/scripts/register.js" defer></script>
     <script>
         // Reset the scroll position on page load
         window.addEventListener('load', function() {
@@ -29,11 +29,13 @@
 
     <div class="login-container">
         <div class="login-heading">
-            <h1>Log in</h1>
-            <p style="font-size: 20px; margin-top: -15px;">Don't have an account? <a style="color: #89BEFF;" href="/signup">Sign up</a></p>
+            <h1>Sign up</h1>
+            <p style="font-size: 20px; margin-top: -15px;">Don't have an account? <a style="color: #89BEFF;" href="/login">Log in</a></p>
         </div>
 
         <form class="login-form">
+            <input type="text" class="login-input" placeholder="Name" id="name">
+            <br>
             <input type="text" class="login-input" placeholder="Email" id="email">
             <br>
             <input type="password" class="login-input" placeholder="Password" style="margin-bottom: 30px;" id="password">

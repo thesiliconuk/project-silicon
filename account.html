@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/account.css">
+
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
+
+    <script src="/scripts/accountPage.js" type="module"></script>
+    <script src="/scripts/scrollreveal.js"></script>
+    <script>
+        // Reset the scroll position on page load
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/wallpapers" class="navbar-link">Wallpapers</a>    
+        <a href="#" class="navbar-link">Social Media</a>
+        <a href="/about" class="navbar-link">About us</a>
+
+        <!--Signed out-->
+        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
+        <a href="/login" id="login" class="special-navbar-link">Log in</a>
+
+        <!--Signed in-->
+        <a href="/account" id="account" class="special-navbar-link">Account</a>
+        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
+    </header>
+
+    <h1 style="margin-top: 125px; margin-left: 67px;">Your account</h1>
+    <div class="account-container">
+        <div class="left-rail">
+            <div class="account-overview">
+                <h1 id="account-overview-name"></h1>
+                <p id="account-overview-email"></p>
+            </div>
+            
+            <div class="account-links">
+                <p id="account-links-account-details">Account details</p>
+                <p id="account-links-your-comments">Your comments</p>
+                <p id="account-links-admin-panel" onclick="window.location.href = '/admin'">Admin panel</p>
+                <p id="account-links-log-out">Log out</p>
+            </div>
+
+        </div>
+
+        <div class="main-rail">
+            <div id="main-rail-account-details">
+                <h1>Account details</h1>
+                <p id="account-details-name"></p>
+                <p id="account-details-email"></p>
+                <h2>Badges</h2>
+                <div id="account-details-badges"></div>
+            </div>
+
+            <div id="main-rail-your-comments">
+                <h1>Your comments</h1>
+                <div id="your-comments-container"></div>
+            </div>
+        </div> 
+    </div>
+
+    <script src="/scripts/linkeEligibility.js" type="module"></script>
+</body>
+</html>

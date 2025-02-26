@@ -1,0 +1,99 @@
+.wallpaper-home-container{
+    display: flex;
+}
+
+.wallpaper-home-option{
+    width: 50%;
+    height: 50%;
+}
+
+.wallpaper-home-option p{
+    font-size: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.wallpaper-home-option p, h1{
+    text-align: center;
+}
+
+.wallpaper-home-option svg path{
+    fill: currentColor;
+}
+
+.abstract-orb1{
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: 175px;
+    top: 360px;
+    border-radius: 100%;
+    z-index: -1;
+
+    filter: blur(100px);
+    background: rgb(49, 49, 126);
+}
+
+.abstract-orb2{
+    position: absolute;
+    width: 117px;
+    height: 117px;
+    left: 350px;
+    top: 350px;
+    border-radius: 100%;
+    z-index: -2;
+
+    filter: blur(4px);
+    background: rgb(137, 190, 255);
+}
+
+.natural-orb1{
+    position: absolute;
+    width: 364px;
+    height: 364px;
+    right: 25px;
+    top: 224px;
+    border-radius: 100%;
+    z-index: -1;
+
+    filter: blur(100px);
+    background: rgb(33, 117, 62);
+}
+
+.natural-orb2{
+    position: absolute;
+    width: 136px;
+    height: 136px;
+    right: 300px;
+    top: 500px;
+    border-radius: 100%;
+    z-index: -1;
+
+    filter: blur(4px);
+    background: rgb(43, 100, 63);
+}
+
+.wallpaper-lets-go{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.wallpaper-lets-go:hover{
+    cursor: pointer;
+}
+
+
+.wallpaper-lets-go-link{
+    text-align: right;
+    margin-right: 16px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0%;
+}
+
+.wallpaper-lets-go-arrow{
+    width: 50px;
+}

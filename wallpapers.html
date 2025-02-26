@@ -1,136 +1,114 @@
 <!DOCTYPE html>
-<html>
-
-<title> Wallpapers curated by the editors of the Silicon</title>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Selection</title>
-        <!-- Styling -->
-        <link id="header-css" rel="stylesheet" type="text/css" href="styles/light/header.css">
-        <link id="text-css" rel="stylesheet" type="text/css" href="styles/light/text.css">
-        <link id="favicon" rel="icon" type="image/x-icon" href="/images/logo-light.png">
-        <script src="./toggletheme.js"></script>
-        <!-- Google Analytics -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2889734020737326"
-         crossorigin="anonymous"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/wallpapers.css">
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fcfcfc;
-            text-align: center;
-        }
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
 
-        .container {
-            display: flex;
-            gap: 20px;
-            position: absolute;
-            top: 30%;
-            left: 30%;
-            right: 30%;
-        }
+    <script src="/scripts/scrollreveal.js"></script>
+    <script>
+        // Reset the scroll position on page load
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
 
-        .section {
-            width: 300px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(255, 255, 255);
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .section-natural:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-
-        .section-abstract:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-
-        .section-natural {
-            color: white;
-            width: 300px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(0, 0, 0);
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            position: relative;
-        }
-        
-        .section-abstract {
-            color: rgb(0, 0, 0);
-            width: 300px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(0, 0, 0);
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            position: relative;
-        }
-        
-        
-    </style>
+        document.getElementsByClassName(wallpaper-lets-go-link).addEventListener('click', function() {
+            link = document.getElementsByClassName(wallpaper-lets-go).getAttribute('href');
+            window.location.href = link;
+        });
+    </script>
 </head>
 <body>
+
+    <header class="navbar">
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/wallpapers" class="navbar-link">Wallpapers</a>
+        <a href="#" class="navbar-link">Social Media</a>
+        <a href="/about" class="navbar-link">About us</a>
+
+        <!--Signed out-->
+        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
+        <a href="/login" id="login" class="special-navbar-link">Log in</a>
+
+        <!--Signed in-->
+        <a href="/account" id="account" class="special-navbar-link">Account</a>
+        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
+    </header>
+
+    <p style="
+    color: #F89E9E; 
+    text-align: center;
+    margin-top: 150px;
+    font-size: 25px;"
+    >please note: All images are free to use when mentioning that they are from thesilicon.uk</p>
+
+    <div class="wallpaper-home-container">
+        <div class="wallpaper-home-option">
+            <h1 style="
+                background: linear-gradient(90.00deg, rgb(255, 255, 255),rgb(0, 122, 255));
+                -webkit-background-clip:
+                text;
+                -webkit-text-fill-color:
+                transparent;
+                background-clip:
+                text;
+                text-fill-color:
+                transparent;
+                font-family: JetBrains Mono;
+                font-size: 100px;
+                font-weight: 400;
+                line-height: 132px;
+                letter-spacing: 0%;
+                text-align: center;
+            ">Abstract</h1>
+
+            <div class="abstract-orb1"></div>
+            <div class="abstract-orb2"></div>
+
+            <p>Wallpapers made by Badie Badie to give your device a modern look and feel. 
+                More premium versions can be viewed on gumroad </p>
+
+            <div class="wallpaper-lets-go" href="/wallpapers/abstract">
+                <a href="/wallpapers/abstract" class="wallpaper-lets-go-link">Let's go</a>
+                <img src="/images/Arrow right-circle.svg" class="wallpaper-lets-go-arrow">
+            </div>
+        </div>
+        <div class="wallpaper-home-option">
+            <h1 style="
+                background: linear-gradient(90.00deg, rgb(175, 246, 200),rgb(153, 153, 153));
+                -webkit-background-clip:
+                text;
+                -webkit-text-fill-color:
+                transparent;
+                background-clip:
+                text;
+                text-fill-color:
+                transparent;
+                font-family: JetBrains Mono;
+                font-size: 100px;
+                font-weight: 400;
+                line-height: 132px;
+                letter-spacing: 0%;
+                text-align: center;
+            ">Natural</h1>
+
+            <div class="natural-orb1"></div>
+            <div class="natural-orb2"></div>
+
+            <p>Images photographed by the editors of thesilicon to give your device a calming 
+                and welcoming feel</p>
+
+            <div class="wallpaper-lets-go" href="/wallpapers/natural">
+                <a href="/wallpapers/natural" class="wallpaper-lets-go-link">Let's go</a>
+                <img src="/images/Arrow right-circle.svg" class="wallpaper-lets-go-arrow">
+            </div>
+    </div>
     
 
-    <div class="container">
-        <a href="/natural" class="section-natural">Natural</a>
-        <a href="/abstract" class="section-abstract">Abstract</a>
-    </div>
-
-    <a href="index" class="back">Back to home</a>
-
+    <script src="/scripts/linkeEligibility.js" type="module"></script>
 </body>
 </html>
-
-<style>
-     .back {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background: rgb(0,0,80);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            width: 10%;
-            position: absolute;
-            bottom: 25%;
-        }
-
-        .back:hover {
-            background: #0056b3;
-        }
-        
-</style>
-
-

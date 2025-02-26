@@ -1,0 +1,65 @@
+body{
+    background-color: #131313;
+}
+
+.navbar{
+    background-color: #ffffff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 89%;
+    margin-top: 52px;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-self: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 100px;
+    /* box-shadow: 0px 0px 15px white; */
+    box-shadow: 0px 0px 100px 20px rgba(255, 255, 255, 0.25);
+    z-index: 1000;
+
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: rgb(1, 1, 1);
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 150%;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar-link:hover{
+    font-size: 160%;
+}
+
+.special-navbar-link{
+    display: none;
+    text-decoration: none;
+    color: rgb(1, 1, 1);
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 150%;
+    transition: all 0.25s ease-in-out;
+}
+
+.special-navbar-link:hover{
+    font-size: 160%;
+}
+
+h1{
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    color: #89BEFF;
+}
+
+h2, h3, h4, h5, h6, p, a, div{
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+}
+
+.admin-account-links{
+    display: none;
+}

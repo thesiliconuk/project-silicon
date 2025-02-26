@@ -1,0 +1,53 @@
+.home {
+  margin-top: 13%;
+  text-align: center;
+}
+
+.home-logo {
+  width: 50px;
+  height: auto;
+  background-size: contain;
+  margin-bottom: -50px;
+}
+
+.home-heading {
+  font-size: 600%;
+  font-weight: 100;
+  margin-bottom: 0px;
+}
+
+.home-subtext {
+  font-size: 150%;
+}
+
+.home-orb1 {
+  position: absolute;
+  width: 147px;
+  height: 148px;
+  left: 40%;
+  top: 250px;
+  z-index: -1;
+  border-radius: 100%;
+  background: #C2B895;
+  filter: blur(125px);
+}
+
+.home-orb2 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  top: 300px;
+  z-index: -1;
+  border-radius: 100%;
+  background: #31317E;
+  filter: blur(125px);
+}
+
+.home-callout {
+  position: absolute;
+  left: 60%;
+  top: 75vh;
+  font-family: Kalam;
+  z-index: 1;
+}
