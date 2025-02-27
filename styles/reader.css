@@ -3,13 +3,13 @@
     font-family: Helvetica;
     font-size: large;
     font-size: 25px;
+    line-height: 40px;
 }
 .article-container{
     margin-top: 150px;
     margin-bottom: 50px;
     margin-left: 10%;
     margin-right: 10%;
-    line-height: 40px;
 }
 
 #article-title, #article-author, #article-date{
