@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <title>Wallpapers | The Silicon</title>
     <link rel="stylesheet" href="/styles/main.css"> 
     <link rel="stylesheet" href="/styles/wallpapers.css">
 
@@ -15,11 +15,6 @@
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
-
-        document.getElementsByClassName(wallpaper-lets-go-link).addEventListener('click', function() {
-            link = document.getElementsByClassName(wallpaper-lets-go).getAttribute('href');
-            window.location.href = link;
-        });
     </script>
 </head>
 <body>
@@ -27,7 +22,7 @@
     <header class="navbar">
         <a href="/" class="navbar-link">Home</a>
         <a href="/wallpapers" class="navbar-link">Wallpapers</a>
-        <a href="#" class="navbar-link">Social Media</a>
+        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">Social Media</a>
         <a href="/about" class="navbar-link">About us</a>
 
         <!--Signed out-->
@@ -72,8 +67,8 @@
             <p>Wallpapers made by Badie Badie to give your device a modern look and feel. 
                 More premium versions can be viewed on gumroad </p>
 
-            <div class="wallpaper-lets-go" href="/wallpapers/abstract">
-                <a href="/wallpapers/abstract" class="wallpaper-lets-go-link">Let's go</a>
+            <div class="wallpaper-lets-go" onclick="window.location.href= '/wallpapers/abstract'">
+                <a class="wallpaper-lets-go-link">Let's go</a>
                 <img src="/images/Arrow right-circle.svg" class="wallpaper-lets-go-arrow">
             </div>
         </div>
@@ -102,8 +97,8 @@
             <p>Images photographed by the editors of thesilicon to give your device a calming 
                 and welcoming feel</p>
 
-            <div class="wallpaper-lets-go" href="/wallpapers/natural">
-                <a href="/wallpapers/natural" class="wallpaper-lets-go-link">Let's go</a>
+            <div class="wallpaper-lets-go" onclick="window.location.href= '/wallpapers/natural'">
+                <a class="wallpaper-lets-go-link">Let's go</a>
                 <img src="/images/Arrow right-circle.svg" class="wallpaper-lets-go-arrow">
             </div>
     </div>

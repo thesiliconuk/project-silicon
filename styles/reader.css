@@ -1,0 +1,16 @@
+#article-content{
+    margin-top: 50px;
+    font-family: Helvetica;
+    font-size: large;
+    font-size: 25px;
+}
+.article-container{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#article-title, #article-author, #article-date{
+    text-align: center;
+}

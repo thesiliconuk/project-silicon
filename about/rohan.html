@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Rohan Kharel | The Silicon</title>
     <link rel="stylesheet" href="/styles/main.css"> 
     <link rel="stylesheet" href="/styles/about.css">
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
@@ -16,14 +16,19 @@
     </script>
 </head>
 <body>
-
     <header class="navbar">
         <a href="/" class="navbar-link">Home</a>
-        <a href="#" class="navbar-link">Wallpapers</a>
-        <a href="#" class="navbar-link">Social Media</a>
+        <a href="/wallpapers" class="navbar-link">Wallpapers</a>
+        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">Social Media</a>
         <a href="/about" class="navbar-link">About us</a>
-        <a href="#" class="navbar-link">Sign up</a>
-        <a href="#" class="navbar-link">Log in</a>
+
+        <!--Signed out-->
+        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
+        <a href="/login" id="login" class="special-navbar-link">Log in</a>
+
+        <!--Signed in-->
+        <a href="/account" id="account" class="special-navbar-link">Account</a>
+        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
     </header>
 
     <div class="about-title">
@@ -53,6 +58,7 @@
             <a href="/about">Back</a>
         </div>
     </div>
+    <script src="/scripts/linkeEligibility.js" type="module"></script>
 
 </body>
 </html>

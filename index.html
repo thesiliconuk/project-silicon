@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>The Silicon</title>
     <link rel="stylesheet" href="/styles/main.css"> 
     <link rel="stylesheet" href="/styles/homescreen.css">
     <link rel="stylesheet" href="/styles/articlelist.css">
@@ -22,7 +22,7 @@
     <header class="navbar">
         <a href="/" class="navbar-link">Home</a>
         <a href="/wallpapers" class="navbar-link">Wallpapers</a>
-        <a href="#" class="navbar-link">Social Media</a>
+        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">Social Media</a>
         <a href="/about" class="navbar-link">About us</a>
 
         <!--Signed out-->
@@ -44,10 +44,9 @@
 
     <div class="articlelist-container" id="articles-container"></div>
 
-
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-        import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy, addDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+        import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy, limit, startAfter } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
 
         const firebaseConfig = {
@@ -63,8 +62,10 @@
         const db = getFirestore(app);
         const auth = getAuth(app);
 
+        let lastVisible = null;
+        const articlesContainer = document.getElementById('articles-container');
+
         async function fetchArticles() {
-            const articlesContainer = document.getElementById('articles-container');
             const articlesQuery = query(collection(db, "articles"), orderBy("createdAt", "desc"));
             const querySnapshot = await getDocs(articlesQuery);
             
@@ -82,20 +83,20 @@
                 });
             }
 
+            if (querySnapshot.docs.length > 0) {
+                lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+            }
+
             articles.forEach(article => {
                 const articleElement = document.createElement('div');
                 articleElement.classList.add('articlelist');
                 articleElement.innerHTML = `
-                    <a href="#" data-id="${article.id}">
+                    <a href="/read?a=${article.id}" data-id="${article.id}">
                         <h2 style="color: rgb(105,164,237)">${article.title}</h2>
                         <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${article.authorName}</i></p>
                         <img src="${article.bannerURL}" width="80%">
                     </a>
                 `;
-                articleElement.querySelector('a').addEventListener('click', async (event) => {
-                    event.preventDefault();
-                    await openArticleModal(article.id);
-                });
                 articlesContainer.appendChild(articleElement);
             });
 
@@ -108,137 +109,14 @@
             });
         }
 
-        async function openArticleModal(articleId) {
-            const modal = document.getElementById('article-modal');
-            const articleContent = document.getElementById('article-content');
-            const commentsList = document.getElementById('comments-list');
-            const docRef = doc(db, "articles", articleId);
-            const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) {
-                const article = docSnap.data();
-                const authorRef = doc(db, "users", article.authorId);
-                const authorSnap = await getDoc(authorRef);
-                const authorName = authorSnap.exists() ? authorSnap.data().name : "Unknown Author";
-
-                articleContent.innerHTML = `
-                    <!-- <h2 style="margin-top:-20px">${article.title}</h2>
-                    <p style="margin-top-20px"><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${authorName}</i></p> --!>
-
-                    <img src="${article.bannerURL}" width="70%" style="border-radius: 20px; text-align: center; 
-                      display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-top: -50px;
-                    ">
-                    <p>${article.content}</p>
-                `;
-                modal.style.display = "block";
-                document.body.classList.add('modal-open');
-
-                // Fetch and display comments
-                commentsList.innerHTML = '';
-                const commentsQuery = query(collection(db, `articles/${articleId}/comments`), orderBy('createdAt', 'desc'));
-                const commentsSnapshot = await getDocs(commentsQuery);
-                commentsSnapshot.forEach((commentDoc) => {
-                    const comment = commentDoc.data();
-                    const commentElement = document.createElement('div');
-                    commentElement.classList.add('comment');
-                    commentElement.innerHTML = `
-                        <p><strong>${comment.authorName}</strong>: ${comment.text}</p>
-                    `;
-                    commentsList.appendChild(commentElement);
-                });
-
-                // Handle comment form submission
-                const commentForm = document.getElementById('comment-form');
-                commentForm.onsubmit = async (event) => {
-                    event.preventDefault();
-                    const commentText = document.getElementById('comment-text').value;
-                    const user = auth.currentUser;
-                    if (user) {
-                        const userDoc = await getDoc(doc(db, "users", user.uid));
-                        const authorName = userDoc.exists() ? userDoc.data().name : "Anonymous";
-                        await addDoc(collection(db, `articles/${articleId}/comments`), {
-                            text: commentText,
-                            authorName: authorName,
-                            createdAt: new Date()
-                        });
-                        document.getElementById('comment-text').value = '';
-                        await openArticleModal(articleId); // Refresh comments
-                    } else {
-                        alert('You must be logged in to comment.');
-                    }
-                };
-            } else {
-                console.log("No such document!");
-            }
-        
-        }
-
-        window.closeModal = function() {
-            document.getElementById('article-modal').style.display = 'none';
-            document.body.classList.remove('modal-open');
-        }
-
         window.addEventListener('DOMContentLoaded', fetchArticles);
+
+
         ScrollReveal().reveal('.home', { delay: 100 });
         ScrollReveal().reveal('.articlelist-container', { delay: 100 });
 
     </script>
 
-    <!-- Modal -->
-    <div id="article-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="article-content"></div>
-            <div id="comments-list"></div>
-            <form id="comment-form">
-                <textarea id="comment-text" placeholder="Write a comment..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-        }
-        .modal-content {
-            background-color: #424242;
-            margin: auto;
-            padding: 20px;
-            width: 80%;
-            height: 80vh; /* Fixed height */
-            overflow-y: auto; /* Enable scrolling within the content */
-            border-radius: 50px;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        #article-content {
-            white-space: pre-wrap;
-        }
-    </style>
     <script src="/scripts/linkeEligibility.js" type="module"></script>
 </body>
 </html>

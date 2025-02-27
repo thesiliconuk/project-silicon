@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
+    <script>
+        // Redirect to the correct page based on the URL
+        const path = window.location.pathname;
+        const search = window.location.search;
+
+        if (path === '/read' && search) {
+            window.location.href = `/read.html${search}`;
+        } else {
+            document.write('<h1>Page Not Found</h1>');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
