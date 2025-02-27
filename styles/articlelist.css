@@ -29,7 +29,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 200%; /* Cover both articles in the row */
+    width: 110%; /* Cover both articles in the row */
     height: 3px;
     background-color: white;
 }
