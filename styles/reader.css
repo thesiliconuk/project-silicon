@@ -7,8 +7,9 @@
 .article-container{
     margin-top: 150px;
     margin-bottom: 50px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 40px;
 }
 
 #article-title, #article-author, #article-date{
