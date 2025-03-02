@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>Admin | The Silicon</title>
     <link rel="stylesheet" href="/styles/main.css"> 
-    <link rel="stylesheet" href="/styles/admin.css">
 
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <link rel="stylesheet" href="/styles/admin.css">
+
 
     <script src="/scripts/accountPage.js" type="module"></script>
     <script src="/scripts/scrollreveal.js"></script>
@@ -170,6 +174,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
         import { getFirestore, collection, query, where, getDocs, doc, getDoc, updateDoc, deleteDoc, addDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+        import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyC6eRdhg6EtrRPGA423DJIEIndaWy9UUZA",
@@ -183,6 +188,9 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const auth = getAuth(app);
+
+        // Initialize SimpleMDE
+        const simplemde = new SimpleMDE({ element: document.getElementById("content") });
 
         // Function to ban a user and delete all their comments
         window.banUser = async function() {
@@ -313,7 +321,7 @@
         document.getElementById('submit-article').addEventListener('click', async function(event) {
             event.preventDefault();
             const title = document.getElementById('title').value;
-            const content = document.getElementById('content').value;
+            const content = simplemde.value(); // Get Markdown content from SimpleMDE
             const banner = document.getElementById('banner').files[0];
 
             // Sanitize title to remove special characters
@@ -338,7 +346,7 @@
                 // Save article to Firestore
                 await addDoc(collection(db, "articles"), {
                     title: title,
-                    content: content,
+                    content: content, // Save Markdown content
                     bannerURL: bannerURL,
                     createdAt: new Date(),
                     authorId: auth.currentUser.uid

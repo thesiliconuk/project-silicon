@@ -3,7 +3,6 @@
     font-family: Helvetica, sans-serif;
     font-size: large;
     font-size: 25px;
-    line-height: 40px;
 }
 .article-container{
     margin-top: 150px;
@@ -14,4 +13,59 @@
 
 #article-title, #article-author, #article-date{
     text-align: center;
+}
+
+#article-content p {
+    margin: 0; /* Adjust the margin as needed */
+    line-height: 1.5; /* Adjust the line height as needed */
+}
+
+#article-content h1,
+#article-content h2,
+#article-content h3,
+#article-content h4,
+#article-content h5,
+#article-content h6 {
+    margin-top: 0; /* Adjust the top margin as needed */
+    margin-bottom: 0.5em; /* Adjust the bottom margin as needed */
+}
+
+#article-content ul,
+#article-content ol {
+    margin: 0; /* Adjust the margin as needed */
+    padding-left: 1.5em; /* Adjust the padding as needed */
+}
+
+#article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0; /* Adjust the margin as needed */
+}
+
+#article-content p,
+#article-content h1,
+#article-content h2,
+#article-content h3,
+#article-content h4,
+#article-content h5,
+#article-content h6,
+#article-content blockquote,
+#article-content ul,
+#article-content ol,
+#article-content li,
+#article-content pre,
+#article-content code,
+#article-content a,
+#article-content img,
+#article-content hr,
+#article-content em,
+#article-content strong,
+#article-content table,
+#article-content thead,
+#article-content tbody,
+#article-content tr,
+#article-content th,
+#article-content td {
+    font-family: Helvetica, sans-serif; /* Ensure all elements use the same font */
 }
