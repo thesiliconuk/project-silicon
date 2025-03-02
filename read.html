@@ -8,10 +8,13 @@
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
         import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+        import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyC6eRdhg6EtrRPGA423DJIEIndaWy9UUZA",
@@ -40,7 +43,10 @@
                 document.getElementById('article-author').textContent = `Written by ${authorName}`;
                 document.getElementById('article-date').textContent = `Published ${new Date(article.createdAt.seconds * 1000).toDateString()}`;
                 document.getElementById('article-banner').src = article.bannerURL;
-                document.getElementById('article-content').innerHTML = article.content.replace(/\n/g, '<br>');
+
+                // Convert Markdown to HTML
+                const articleContentHTML = marked(article.content);
+                document.getElementById('article-content').innerHTML = articleContentHTML;
                 document.getElementById('title').textContent = `${article.title} | The Silicon`;
 
                 // Fetch and display comments
@@ -132,5 +138,6 @@
     </div>
 
     <script type="module" src="/scripts/linkeEligibility.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
