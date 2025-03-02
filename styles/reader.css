@@ -69,3 +69,10 @@
 #article-content td {
     font-family: Helvetica, sans-serif; /* Ensure all elements use the same font */
 }
+
+#article-content code {
+    font-family: 'JetBrains Mono', monospace; /* Use JetBrains Mono for code snippets */
+    background-color: #2f2f2f; /* Change the background color */
+    padding: 25px;
+    border-radius: 5px;
+}
