@@ -15,8 +15,13 @@
     position: relative;
 }
 
+.articlelist-policy{
+    margin-top: 60vh;
+    margin-left: 2%;
+    text-align: center;
+    font-size: 25px;
+}
 .articlelist-container {
-    margin-top: 70vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
