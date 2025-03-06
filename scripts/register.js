@@ -14,9 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+var isAlreadyClicked = false;
 
 const submit = document.getElementById('submit');
 submit.addEventListener('click', async function (event) {
+    if (!isAlreadyClicked) {
+        isAlreadyClicked = true;
         event.preventDefault();
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -35,4 +38,8 @@ submit.addEventListener('click', async function (event) {
             const errorMessage = error.message;
             alert(errorMessage);
         }
+        isAlreadyClicked = false;
+    } else {
+        return;
+    }
 });
