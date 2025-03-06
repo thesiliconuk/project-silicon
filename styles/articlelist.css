@@ -38,3 +38,19 @@
     height: 3px;
     background-color: white;
 }
+
+@media only screen and (max-width: 1100px) {
+    .articlelist {
+        width: 100%;
+        padding: 5%;
+        text-align: center;
+        margin-left: 0;
+    }
+    .articlelist:nth-child(1n)::after {
+        margin-left: 0%;
+        width: 100%;
+    }
+    .articlelist-policy{
+        margin-top: 0;
+    }
+}
