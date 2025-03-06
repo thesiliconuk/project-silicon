@@ -8,6 +8,8 @@
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
     <script src="/scripts/scrollreveal.js"></script>
+    <script src="https://kit.fontawesome.com/5ef0c294a5.js" crossorigin="anonymous"></script>
+
     <script type="module" src="/scripts/register.js" defer></script>
     <script>
         // Reset the scroll position on page load
@@ -19,18 +21,42 @@
 <body>
 
     <header class="navbar">
-        <a href="/" class="navbar-link">Home</a>
-        <a href="/wallpapers" class="navbar-link">Wallpapers</a>
-        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">Social Media</a>
-        <a href="/about" class="navbar-link">About us</a>
-
-        <!--Signed out-->
-        <a href="/signup" id="signup" class="special-navbar-link">Sign up</a>
-        <a href="/login" id="login" class="special-navbar-link">Log in</a>
-
-        <!--Signed in-->
-        <a href="/account" id="account" class="special-navbar-link">Account</a>
-        <a href="/logout" id="logout" class="special-navbar-link">Log out</a>
+        <a href="/" class="navbar-link">
+            <i class="fas fa-home"></i>
+            <span class="navbar-text">Home</span>
+        </a>
+        <a href="/wallpapers" class="navbar-link">
+            <i class="fas fa-image"></i>
+            <span class="navbar-text">Wallpapers</span>
+        </a>
+        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">
+            <i class="fab fa-youtube"></i>
+            <span class="navbar-text">Social Media</span>
+        </a>
+        <a href="/about" class="navbar-link">
+            <i class="fas fa-info-circle"></i>
+            <span class="navbar-text">About us</span>
+        </a>
+    
+        <!-- Signed out -->
+        <a href="/signup" id="signup" class="special-navbar-link">
+            <i class="fas fa-user-plus"></i>
+            <span class="navbar-text">Sign up</span>
+        </a>
+        <a href="/login" id="login" class="special-navbar-link">
+            <i class="fas fa-sign-in-alt"></i>
+            <span class="navbar-text">Log in</span>
+        </a>
+    
+        <!-- Signed in -->
+        <a href="/account" id="account" class="special-navbar-link">
+            <i class="fas fa-user"></i>
+            <span class="navbar-text">Account</span>
+        </a>
+        <a href="/logout" id="logout" class="special-navbar-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="navbar-text">Log out</span>
+        </a>
     </header>
 
     <div class="login-container">
