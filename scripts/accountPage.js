@@ -21,9 +21,9 @@ const leftRailAdminPanel = document.getElementById('account-links-admin-panel');
 const leftRailLogOut = document.getElementById('account-links-log-out');
 
 leftRailLogOut.addEventListener('click', async (event) => {
-            event.preventDefault();
-            await signOut(auth);
-            window.location.href = '/';
+    event.preventDefault();
+    await signOut(auth);
+    window.location.href = '/';
 });
 
 const mainRailAccountDetails = document.getElementById('main-rail-account-details');
@@ -123,7 +123,6 @@ leftRailYourComments.addEventListener('click', () => {
     accountRailSwitch(1);
 });
 
-
 function accountRailSwitch(pos) {
     railPos = pos;
     mainRailAccountDetails.style.display = 'none';
@@ -141,13 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function fetchUserData() {
     try {
-        const userId = "testUserId"; // Replace with the actual user ID
+        const user = auth.currentUser;
+        const userId = user.uid;
         const userDocRef = doc(db, "users", userId);
         const userDoc = await getDoc(userDocRef);
-
-        if (!userDoc.exists()) {
-            throw new Error('User data not found');
-        }
 
         const userdata = userDoc.data();
         displayUserData(userdata);
