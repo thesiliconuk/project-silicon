@@ -76,3 +76,8 @@
     padding: 25px;
     border-radius: 5px;
 }
+
+#article-content a{
+    color: #89BEFF;
+    text-decoration: underline;
+}
