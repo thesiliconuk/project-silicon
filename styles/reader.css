@@ -81,3 +81,12 @@
     color: #89BEFF;
     text-decoration: underline;
 }
+
+#article-content a:hover{
+    color: #FFA07A;
+}
+
+#article-content img {
+    border-radius: 20px;
+    height: 500px;
+}
