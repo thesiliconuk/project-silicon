@@ -390,13 +390,21 @@
                 }
                 const bannerURL = data.secure_url;
 
+                const slug = title
+                    .toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                    .replace(/^-|-$/g, '') // Remove leading/trailing '-'
+                    .replace(/\s+/g, '-')         // Replace spaces with hyphens
+                    .replace(/-+/g, '-');         // Remove consecutive hyphens
+
                 // Save article to Firestore
                 await addDoc(collection(db, "articles"), {
                     title: title,
                     content: content, // Save Markdown content
                     bannerURL: bannerURL,
                     createdAt: new Date(),
-                    authorId: auth.currentUser.uid
+                    authorId: auth.currentUser.uid,
+                    slug: slug,
                 });
                 alert('Article submitted: ' + title);
                 window.location.href = '/';

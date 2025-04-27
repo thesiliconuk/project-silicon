@@ -103,18 +103,25 @@
 
         let lastVisible = null;
         const articlesContainer = document.getElementById('articles-container');
+        let isLoading = false; // Prevent multiple simultaneous fetches
 
         async function fetchArticles() {
-            const articlesQuery = query(collection(db, "articles"), orderBy("createdAt", "desc"));
+            if (isLoading) return; // Prevent multiple fetches
+            isLoading = true;
+
+            const articlesQuery = lastVisible
+                ? query(collection(db, "articles"), orderBy("createdAt", "desc"), startAfter(lastVisible), limit(5))
+                : query(collection(db, "articles"), orderBy("createdAt", "desc"), limit(5));
+
             const querySnapshot = await getDocs(articlesQuery);
-            
+
             const articles = [];
             for (const docSnapshot of querySnapshot.docs) {
                 const article = docSnapshot.data();
                 const authorRef = doc(db, "users", article.authorId);
                 const authorSnap = await getDoc(authorRef);
                 const authorName = authorSnap.exists() ? authorSnap.data().name : "Unknown Author";
-                
+
                 articles.push({
                     id: docSnapshot.id,
                     ...article,
@@ -130,7 +137,7 @@
                 const articleElement = document.createElement('div');
                 articleElement.classList.add('articlelist');
                 articleElement.innerHTML = `
-                    <a href="/read?a=${article.id}" data-id="${article.id}">
+                    <a href="/articles/${article.slug}" data-id="${article.id}">
                         <h2 style="color: rgb(105,164,237)">${article.title}</h2>
                         <p><i>Published ${new Date(article.createdAt.seconds * 1000).toDateString()} | Written by ${article.authorName}</i></p>
                         <img src="${article.bannerURL}" width="80%">
@@ -144,16 +151,38 @@
                 delay: 100,
                 distance: '50px',
                 origin: 'bottom',
-                reset: true
+                reset: false // Prevent animations from resetting when scrolling
             });
+
+            isLoading = false; // Allow further fetches
         }
 
+        // Add an event listener for infinite scrolling
+        window.addEventListener('scroll', () => {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+            if (scrollTop + clientHeight >= scrollHeight - 50) {
+                fetchArticles(); // Load more articles when near the bottom
+            }
+        });
+
+        // Initial fetch
         window.addEventListener('DOMContentLoaded', fetchArticles);
 
+        // Adjust ScrollReveal for static elements
+        ScrollReveal().reveal('.home', {
+            delay: 100,
+            distance: '50px',
+            origin: 'bottom',
+            reset: false // Prevent animations from resetting
+        });
 
-        ScrollReveal().reveal('.home', { delay: 100 });
-        ScrollReveal().reveal('.articlelist-container', { delay: 100 });
-
+        ScrollReveal().reveal('.articlelist-container', {
+            delay: 100,
+            distance: '50px',
+            origin: 'bottom',
+            reset: false // Prevent animations from resetting
+        });
     </script>
 
     <script src="/scripts/linkeEligibility.js" type="module"></script>

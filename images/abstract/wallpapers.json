@@ -1,62 +1,69 @@
-[
-    {
-        "url": "/images/abstract/abstract1.jpeg",
-        "name": "Abstract 1",
-        "description": "A tropical array of colors in a wave form, perfect for anyone"
-    },
-    {
-        "url": "/images/abstract/abstract2.jpeg",
-        "name": "Abstract 2",
-        "description": "A green style, blending the nature aesthetic into a digital type"
-    },
-    {
-        "url": "/images/abstract/abstract3.jpeg",
-        "name": "Abstract 3",
-        "description": "Light and joyous, perfect to make your device pop"
-    },
-    {
-        "url": "/images/abstract/abstract4.jpeg",
-        "name": "Abstract 4",
-        "description": "A beautiful color combination, bringing much needed color, while keeping a professional look"
-    },
-    {
-        "url": "/images/abstract/abstract5.jpeg",
-        "name": "Abstract 5",
-        "description": "For those of you who prefer reds and oranges"
-    },
-    {
-        "url": "/images/abstract/abstract6.jpeg",
-        "name": "Abstract 6",
-        "description": "Shockingly contrasting to abstract5, this is for those who prefer a light color scheme"
-    },
-    {
-        "url": "/images/abstract/abstract7.jpeg",
-        "name": "Abstract 7",
-        "description": "A pastel green scheme for anyone who likes green"
-    },
-    {
-        "url": "/images/abstract/abstract8.jpeg",
-        "name": "Abstract 8",
-        "description": "An array of oranges for anyone who likes orange"
-    },
-    {
-        "url": "/images/abstract/abstract9.jpeg",
-        "name": "Abstract 9",
-        "description": "Polka dots, gives your device a minimalistic feel"
-    },
-    {
-        "url": "/images/abstract/abstract10.jpeg",
-        "name": "Abstract 10",
-        "description": "Some brand identity to show off thesilicon.uk"
-    },
-    {
-        "url": "/images/abstract/abstract16.png",
-        "name": "Abstract 16",
-        "description": "Inspired by the apple watch 'flux' face, this wallpaper gives off some brand identity while remaining minimalistic"
-    },
-    {
-        "url": "/images/abstract/abstract19.png",
-        "name": "Abstract 19",
-        "description": "A black and white style, minimal wallpaper use this to make"
-    }
-]
+{
+    "Abstract": [
+        {
+            "Waves": {
+                "cover": "/images/abstract/abstract1.jpeg",
+                "items": [ 
+                {
+                    "url": "/images/abstract/abstract1.jpeg",
+                        "description": "A tropical array of colors in a wave form, perfect for anyone"
+                },
+                {
+                    "url": "/images/abstract/abstract2.jpeg",
+                        "description": "A green style, blending the nature aesthetic into a digital type"
+                },
+                {
+                    "url": "/images/abstract/abstract3.jpeg",
+                        "description": "Light and joyous, perfect to make your device pop"
+                },
+                {
+                    "url": "/images/abstract/abstract4.jpeg",
+                        "description": "A beautiful color combination, bringing much needed color, while keeping a professional look"
+                },
+                {
+                    "url": "/images/abstract/abstract5.jpeg",
+                        "description": "For those of you who prefer reds and oranges"
+                },
+                {
+                    "url": "/images/abstract/abstract6.jpeg",
+                        "description": "Shockingly contrasting to abstract5, this is for those who prefer a light color scheme"
+                },
+                {
+                    "url": "/images/abstract/abstract7.jpeg",
+                        "description": "A pastel green scheme for anyone who likes green"
+                },
+                    {
+                        "url": "/images/abstract/abstract8.jpeg",
+                            "description": "An array of oranges for anyone who likes orange"
+                    }
+                ]
+            }
+        },
+        {
+            "other": {
+                "cover": "/images/abstract/abstract9.jpeg",
+                "items": [
+                    {
+                        "url": "/images/abstract/abstract9.jpeg",
+                        "description": "Polka dots, gives your device a minimalistic feel"
+                    },
+                    {
+                        "url": "/images/abstract/abstract10.jpeg",
+        
+                        "description": "Some brand identity to show off thesilicon.uk"
+                    },
+                    {
+                        "url": "/images/abstract/abstract16.png",
+        
+                        "description": "Inspired by the apple watch 'flux' face, this wallpaper gives off some brand identity while remaining minimalistic"
+                    },
+                    {
+                        "url": "/images/abstract/abstract19.png",
+        
+                        "description": "A black and white style, minimal wallpaper use this to make"
+                    }
+                ]
+            }        
+        }
+    ]
+}
