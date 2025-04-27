@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1009V5P92C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1009V5P92C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-1009V5P92C');
-</script>
+        gtag('config', 'G-1009V5P92C');
+    </script>
 
     <meta charset="UTF-8">
     <title>Abstract | The Silicon</title>
-    <link rel="stylesheet" href="/styles/main.css"> 
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/abstract.css">
 
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
     <script src="https://kit.fontawesome.com/5ef0c294a5.js" crossorigin="anonymous"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1331103242570956"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
 
     <script src="/scripts/scrollreveal.js"></script>
     <script>
         // Reset the scroll position on page load
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             window.scrollTo(0, 0);
             fetchWallpapers();
         });
 
         // Add event listener to elements with class 'wallpaper-lets-go-link'
         document.querySelectorAll('.wallpaper-lets-go-link').forEach(element => {
-            element.addEventListener('click', function() {
+            element.addEventListener('click', function () {
                 const link = element.getAttribute('href');
                 window.location.href = link;
             });
@@ -70,6 +71,7 @@
         }
     </script>
 </head>
+
 <body>
 
     <header class="navbar">
@@ -89,7 +91,7 @@
             <i class="fas fa-info-circle"></i>
             <span class="navbar-text">About us</span>
         </a>
-    
+
         <!-- Signed out -->
         <a href="/signup" id="signup" class="special-navbar-link">
             <i class="fas fa-user-plus"></i>
@@ -99,7 +101,7 @@
             <i class="fas fa-sign-in-alt"></i>
             <span class="navbar-text">Log in</span>
         </a>
-    
+
         <!-- Signed in -->
         <a href="/account" id="account" class="special-navbar-link">
             <i class="fas fa-user"></i>
@@ -114,11 +116,44 @@
     <p style="
     text-align: center;
     margin-top: 150px;
-    font-size: 25px;"
-    >Wallpapers made by members of thesilicon to give your device a modern look and feel. More premium versions can be viewed on gumroad </p>
+    font-size: 25px;">Wallpapers made by members of thesilicon to give your device a modern look and feel. More premium
+        versions can be viewed on gumroad </p>
 
+    <div class="abstract-upsell-container">
+        <div class="abstract-upsell">
+            <img src="/images/gumroad-pfp/badie.webp">
+            <div class="abstract-upsell-text">
+                <h1>Badie Badie</h1>
+                    <a class="abstract-upsell-arrow" href="https">
+                        <h2>See on Gumroad</h2>
+                        <h2 class="fas fa-arrow-right"></h2>
+                    </a>
+            </div>
+        </div>
+        <div class="abstract-upsell">
+            <img src="/images/gumroad-pfp/rohan.webp">
+            <div class="abstract-upsell-text">
+                <h1>Rohan Kharel</h1>
+                    <a class="abstract-upsell-arrow"href="https">
+                        <h2>See on Gumroad</h2>
+                        <h2 class="fas fa-arrow-right"></h2>
+                    </a>
+            </div>
+        </div>
+        <div class="abstract-upsell">
+            <img src="/images/gumroad-pfp/aalay.webp">
+            <div class="abstract-upsell-text">
+                <h1>Aalay Gandhi</h1>
+                    <a class="abstract-upsell-arrow" href="https">
+                        <h2>See on Gumroad</h2>
+                        <h2 class="fas fa-arrow-right"></h2>
+                    </a>
+            </div>
+        </div>
+    </div>
     <div id="wallpapers-container" style="margin-top: 50px;"></div>
 
     <script src="/scripts/linkeEligibility.js" type="module"></script>
 </body>
+
 </html>

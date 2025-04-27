@@ -21,3 +21,50 @@
     font-size: 30px;
     text-align: center;
 }
+.abstract-upsell{
+    background-color: #4B4B4B;
+    margin: 4%;
+    border: 2px solid #C2B895;
+    border-radius: 50px;
+    box-shadow: 30px 30px #131313, 30px 30px 0 2px #C2B895;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.abstract-upsell-container img{
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+.abstract-upsell-arrow{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.abstract-upsell-arrow i, .abstract-upsell-arrow h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.abstract-upsell-text h1{
+    margin-top: 0px;
+}
+
+.abstract-upsell-container{
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (max-width: 1100px) {
+
+    .abstract-upsell-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
