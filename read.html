@@ -13,6 +13,11 @@
 </script>
 
     <meta charset="UTF-8">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
     <link rel="stylesheet" href="/styles/main.css"> 
     <link rel="stylesheet" href="/styles/reader.css">
 
@@ -58,6 +63,11 @@
                 document.getElementById('article-author').textContent = `Written by ${authorName}`;
                 document.getElementById('article-date').textContent = `Published ${new Date(article.createdAt.seconds * 1000).toDateString()}`;
                 document.getElementById('article-banner').src = article.bannerURL;
+
+                document.querySelector('meta[property="og:title"]').content = article.title;
+                document.querySelector('meta[property="og:type"]').content = "article";
+                document.querySelector('meta[property="og:url"]').content = window.location.href;
+                document.querySelector('meta[property="og:image"]').content = article.bannerURL;
 
                 // Convert Markdown to HTML
                 const articleContentHTML = marked(article.content);
