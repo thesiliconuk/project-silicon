@@ -9,6 +9,8 @@ import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/fireb
 
 // Your web app's Firebase configuration
 
+
+
 const firebaseConfig = {
 
     apiKey: "AIzaSyC6eRdhg6EtrRPGA423DJIEIndaWy9UUZA",
