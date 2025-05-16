@@ -1,11 +1,11 @@
-const { initializeApp, applicationDefault } = require('firebase-admin/app');
+const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
-// Only initialize once
 let app;
 if (!app) {
+  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
   app = initializeApp({
-    credential: applicationDefault(),
+    credential: cert(serviceAccount),
     projectId: 'silicon-articles'
   });
 }
