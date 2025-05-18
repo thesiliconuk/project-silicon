@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1009V5P92C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1009V5P92C');
+    </script>
+
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | The Silicon</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ page.banner }}">
+
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/reader.css">
+
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/5ef0c294a5.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1331103242570956"
+        crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="/" class="navbar-link">
+            <i class="fas fa-home"></i>
+            <span class="navbar-text">Home</span>
+        </a>
+        <a href="/wallpapers" class="navbar-link">
+            <i class="fas fa-image"></i>
+            <span class="navbar-text">Wallpapers</span>
+        </a>
+        <a href="https://www.youtube.com/@the-silicon" class="navbar-link">
+            <i class="fab fa-youtube"></i>
+            <span class="navbar-text">Social Media</span>
+        </a>
+        <a href="/about" class="navbar-link">
+            <i class="fas fa-info-circle"></i>
+            <span class="navbar-text">About us</span>
+        </a>
+
+        <!-- Signed out -->
+        <a href="/signup" id="signup" class="special-navbar-link">
+            <i class="fas fa-user-plus"></i>
+            <span class="navbar-text">Sign up</span>
+        </a>
+        <a href="/login" id="login" class="special-navbar-link">
+            <i class="fas fa-sign-in-alt"></i>
+            <span class="navbar-text">Log in</span>
+        </a>
+
+        <!-- Signed in -->
+        <a href="/account" id="account" class="special-navbar-link">
+            <i class="fas fa-user"></i>
+            <span class="navbar-text">Account</span>
+        </a>
+        <a href="/logout" id="logout" class="special-navbar-link">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="navbar-text">Log out</span>
+        </a>
+    </header>
+
+    <div class="article-container">
+        <h1 id="article-title"> {{ page.title }}</h1>
+        <p id="article-author">{{ page.author }}</p>
+        <p id="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+        <img id="article-banner" src="{{ page.banner }}" alt="Article Banner"
+            style="display: block; width: 50%; border-radius: 20px; margin-left: auto; margin-right: auto;">
+        <div id="article-content" style="white-space: pre-wrap;">{{ content }}</div>
+
+        <div class="comments-section">
+            <h2>Comments</h2>
+            <p>Comments have been temporarily disabled</p>
+        </div>
+    </div>
+
+    <script type="module" src="/scripts/linkeEligibility.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+
+</html>
