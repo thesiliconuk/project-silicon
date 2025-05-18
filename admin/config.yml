@@ -13,13 +13,13 @@ theme:
   themes:
     - name: The Silicon Dark
       text:
-        primary: "#ffffff"         # Main text is white
-        secondary: "#b3d3f7"       # Subtle text, matches light blue accent
+        primary: "#ffffff"
+        secondary: "#b3d3f7"
         disabled: "#6c7a89"
       background:
-        main: "#181c23"            # Main background (dark)
-        light: "#232837"           # Slightly lighter for cards/inputs
-        dark: "#10131a"            # Even darker for sidebar
+        main: "#181c23"
+        light: "#232837"
+        dark: "#10131a"
         divider: "#232837"
       scrollbar:
         main: "#69a4ed"
@@ -27,7 +27,7 @@ theme:
       button:
         disabled: "#232837"
       primary:
-        main: "#69a4ed"            # Light blue for accents, buttons, links, headings
+        main: "#69a4ed"
         light: "#b3d3f7"
         dark: "#3776b6"
         contrastColor: "#181c23"
@@ -53,13 +53,6 @@ theme:
         contrastColor: "#181c23"
       codemirror:
         theme: dark
-
-      typography:
-        fontFamily: "'JetBrains Mono', 'Kalam', monospace, sans-serif"
-        headings:
-          fontFamily: "'Kalam', cursive, 'JetBrains Mono', monospace, sans-serif"
-          color: "#69a4ed"        # Headings/titles in light blue
-        fontSize: 16
 
 collections:
   - name: "articles"
