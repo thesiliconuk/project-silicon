@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: thesiliconuk/project-silicon
+  branch: main
+
+media_folder: "article-banners"
+public_folder: "/article-banners"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "_articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "layout", label: "Layout", widget: "hidden", default: "article" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "author", label: "Author", widget: "string" }
+      - { name: "banner", label: "Banner", widget: "image" }
+      - { name: "description", label: "Description", widget: "string", required: false }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }

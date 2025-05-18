@@ -11,6 +11,8 @@ title: The Silicon
   gtag('config', 'G-1009V5P92C');
 </script>
 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <meta charset="UTF-8">
 <title>The Silicon</title>
 <link rel="stylesheet" href="/styles/main.css"> 
@@ -92,3 +94,15 @@ title: The Silicon
 </div>
 
 <script src="/scripts/linkeEligibility.js" type="module"></script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
