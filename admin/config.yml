@@ -7,8 +7,6 @@ logo_url: /images/logo.png
 media_folder: "article-banners"
 public_folder: "/article-banners"
 
-publish_mode: editorial_workflow
-
 theme:
   include_built_in_themes: false
   default_theme: The Silicon Dark
