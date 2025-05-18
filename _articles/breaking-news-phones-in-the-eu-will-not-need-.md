@@ -1,11 +1,11 @@
 ---
 layout: article
-title: "Breaking News: Phones in the EU will not need "
-date: "2025-03-22T09:46:46.000Z"
-author: "Charles"
+title: "Breaking News: Phones in the EU will not need chargers soon"
+date: 2025-03-22T09:46:46.000Z
+author: Charles
 banner: /article-banners/breaking-news-phones-in-the-eu-will-not-need-.jpg
 description: ""
-slug: "breaking-news-phones-in-the-eu-will-not-need-"
+slug: breaking-news-phones-in-the-eu-will-not-need-chargers-soon
 ---
 
 ***Breaking News***
