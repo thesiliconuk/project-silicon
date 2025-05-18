@@ -7,6 +7,53 @@ public_folder: "/article-banners"
 
 publish_mode: editorial_workflow
 
+theme:
+  include_built_in_themes: false
+  default_theme: The Silicon
+  themes:
+    - name: The Silicon
+      text:
+        primary: "#181c23"
+        secondary: "#69a4ed"
+        disabled: "rgba(24,28,35,0.5)"
+      background:
+        main: "#f7faff"
+        light: "#ffffff"
+        dark: "#181c23"
+        divider: "#69a4ed"
+      scrollbar:
+        main: "#69a4ed"
+        light: "#b3d3f7"
+      button:
+        disabled: "#b3d3f7"
+      primary:
+        main: "#69a4ed"
+        light: "#b3d3f7"
+        dark: "#3776b6"
+        contrastColor: "#ffffff"
+      error:
+        main: "#e74c3c"
+        light: "#ffb3b3"
+        dark: "#c0392b"
+        contrastColor: "#ffffff"
+      warning:
+        main: "#ffb347"
+        light: "#ffe0b3"
+        dark: "#b6842c"
+        contrastColor: "#181c23"
+      info:
+        main: "#69a4ed"
+        light: "#b3d3f7"
+        dark: "#3776b6"
+        contrastColor: "#ffffff"
+      success:
+        main: "#27ae60"
+        light: "#81c784"
+        dark: "#219150"
+        contrastColor: "#ffffff"
+      codemirror:
+        theme: light
+
 collections:
   - name: "articles"
     label: "Articles"
