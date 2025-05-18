@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: thesiliconuk/project-silicon
+  name: git-gateway
   branch: main
 
 media_folder: "article-banners"
