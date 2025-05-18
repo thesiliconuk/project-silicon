@@ -28,6 +28,7 @@
       const { h } = window.CMS;
 
       const ArticlePreview = ({ entry }) => {
+        // Use getIn for compatibility with Immutable.js
         const title = entry.getIn(['data', 'title']) || '';
         const author = entry.getIn(['data', 'author']) || '';
         const date = entry.getIn(['data', 'date']) || '';
