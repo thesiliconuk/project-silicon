@@ -9,28 +9,28 @@ publish_mode: editorial_workflow
 
 theme:
   include_built_in_themes: false
-  default_theme: thesilicon
+  default_theme: The Silicon Dark
   themes:
-    - name: thesilicon
+    - name: The Silicon Dark
       text:
-        primary: "#181c23"
-        secondary: "#69a4ed"
-        disabled: "rgba(24,28,35,0.5)"
+        primary: "#ffffff"         # Main text is white
+        secondary: "#b3d3f7"       # Subtle text, matches light blue accent
+        disabled: "#6c7a89"
       background:
-        main: "#f7faff"
-        light: "#ffffff"
-        dark: "#181c23"
-        divider: "#69a4ed"
+        main: "#181c23"            # Main background (dark)
+        light: "#232837"           # Slightly lighter for cards/inputs
+        dark: "#10131a"            # Even darker for sidebar
+        divider: "#232837"
       scrollbar:
         main: "#69a4ed"
-        light: "#b3d3f7"
+        light: "#232837"
       button:
-        disabled: "#b3d3f7"
+        disabled: "#232837"
       primary:
-        main: "#69a4ed"
+        main: "#69a4ed"            # Light blue for accents, buttons, links, headings
         light: "#b3d3f7"
         dark: "#3776b6"
-        contrastColor: "#ffffff"
+        contrastColor: "#181c23"
       error:
         main: "#e74c3c"
         light: "#ffb3b3"
@@ -45,14 +45,21 @@ theme:
         main: "#69a4ed"
         light: "#b3d3f7"
         dark: "#3776b6"
-        contrastColor: "#ffffff"
+        contrastColor: "#181c23"
       success:
         main: "#27ae60"
         light: "#81c784"
         dark: "#219150"
-        contrastColor: "#ffffff"
+        contrastColor: "#181c23"
       codemirror:
-        theme: light
+        theme: dark
+
+      typography:
+        fontFamily: "'JetBrains Mono', 'Kalam', monospace, sans-serif"
+        headings:
+          fontFamily: "'Kalam', cursive, 'JetBrains Mono', monospace, sans-serif"
+          color: "#69a4ed"        # Headings/titles in light blue
+        fontSize: 16
 
 collections:
   - name: "articles"
