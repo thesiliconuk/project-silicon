@@ -24,5 +24,38 @@
     <script>
       window.CMS.init();
     </script>
+    <script type="module">
+      import CMS from "https://unpkg.com/@staticcms/app@^4.0.0/dist/static-cms-app.js";
+
+      const ArticlePreview = ({ entry }) => {
+        const title = entry.data.title || '';
+        const author = entry.data.author || '';
+        const date = entry.data.date || '';
+        const banner = entry.data.banner || '';
+        const content = entry.data.body || '';
+
+        return `
+          <div class="article-container">
+            <h1 id="article-title">${title}</h1>
+            <p id="article-author">${author}</p>
+            <p id="article-date">${date}</p>
+            ${banner ? `<img id="article-banner" src="${banner}" alt="Article Banner"
+              style="display: block; width: 50%; border-radius: 20px; margin-left: auto; margin-right: auto;">` : ''}
+            <div id="article-content" style="white-space: pre-wrap;">${content}</div>
+            <div class="comments-section">
+              <h2>Comments</h2>
+              <p>Comments have been temporarily disabled</p>
+            </div>
+          </div>
+        `;
+      };
+
+      // Register the preview template
+      window.CMS.registerPreviewTemplate("articles", ArticlePreview);
+
+      // Register your CSS for the preview pane
+      window.CMS.registerPreviewStyle("/styles/main.css");
+      window.CMS.registerPreviewStyle("/styles/reader.css");
+    </script>
   </body>
 </html>
