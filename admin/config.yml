@@ -9,9 +9,9 @@ publish_mode: editorial_workflow
 
 theme:
   include_built_in_themes: false
-  default_theme: The Silicon
+  default_theme: thesilicon
   themes:
-    - name: The Silicon
+    - name: thesilicon
       text:
         primary: "#181c23"
         secondary: "#69a4ed"
