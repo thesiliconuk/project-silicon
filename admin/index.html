@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^4.0.0/dist/main.css" />
@@ -13,55 +14,42 @@
       }
       h1, h2, h3, h4, .MuiTypography-h1, .MuiTypography-h2, .MuiTypography-h3, .MuiTypography-h4 {
         font-family: Helvetica, Arial, sans-serif !important;
-        color: #69a4ed !important;
+        color: #69a4ed !important; /* or your preferred blue */
       }
     </style>
-    <!-- Add marked.js for Markdown rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
+    <!-- Include the script that builds the page and powers Static CMS -->
     <script src="https://unpkg.com/@staticcms/app@^4.0.0/dist/static-cms-app.js"></script>
     <script>
-      window.CMS.registerPreviewStyle("/styles/main.css");
-      window.CMS.registerPreviewStyle("/styles/reader.css");
+      window.CMS.init();
+    </script>
+  </body>
+</html><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
 
-      const { h } = window.CMS;
-
-      const ArticlePreview = ({ entry }) => {
-        // Use getIn for compatibility with Immutable.js
-        const title = entry.getIn(['data', 'title']) || '';
-        const author = entry.getIn(['data', 'author']) || '';
-        const date = entry.getIn(['data', 'date']) || '';
-        const banner = entry.getIn(['data', 'banner']) || '';
-        const content = entry.getIn(['data', 'body']) || '';
-
-        return h(
-          "div",
-          { className: "article-container" },
-          banner &&
-            h("img", {
-              id: "article-banner",
-              src: banner,
-              alt: "Article Banner",
-              style: "display: block; width: 50%; border-radius: 20px; margin: 2rem auto;"
-            }),
-          h("h1", { id: "article-title" }, title),
-          h("div", { style: "display: flex; gap: 1em; justify-content: center; margin-bottom: 1em;" },
-            h("span", { id: "article-author" }, author),
-            h("span", { id: "article-date" }, date)
-          ),
-          h("div", {
-            id: "article-content",
-            dangerouslySetInnerHTML: { __html: window.marked ? window.marked.parse(content) : content }
-          }),
-          h("div", { className: "comments-section" },
-            h("h2", null, "Comments"),
-            h("p", null, "Comments have been temporarily disabled")
-          )
-        );
-      };
-
-      window.CMS.registerPreviewTemplate("articles", ArticlePreview);
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^4.0.0/dist/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono:400,700|Kalam:700&display=swap" rel="stylesheet">
+    <title>Content Manager</title>
+    <style>
+      body, .cms-app {
+        font-family: Helvetica, Arial, sans-serif !important;
+      }
+      h1, h2, h3, h4, .MuiTypography-h1, .MuiTypography-h2, .MuiTypography-h3, .MuiTypography-h4 {
+        font-family: Helvetica, Arial, sans-serif !important;
+        color: #69a4ed !important; /* or your preferred blue */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Static CMS -->
+    <script src="https://unpkg.com/@staticcms/app@^4.0.0/dist/static-cms-app.js"></script>
+    <script>
+      window.CMS.init();
     </script>
   </body>
 </html>
