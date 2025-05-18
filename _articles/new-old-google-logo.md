@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Cum Diddy suck it
+title: new old google logo?
 date: 2025-05-16T19:27:23.000Z
 author: Badie Badie
 banner: /article-banners/new-old-google-logo.png
