@@ -1,11 +1,11 @@
 ---
 layout: article
-title: new old google logo?
+title: New Old Logo for Google
 date: 2025-05-16T19:27:23.000Z
 author: Badie Badie
 banner: /article-banners/new-old-google-logo.png
 description: ""
-slug: new-old-google-logo
+slug: new-old-logo-for-google
 ---
 
 I know you didn’t notice but now you will notice every time you look at it. Google just updated the iconic Google ’G’ for the first time in 10 years.
