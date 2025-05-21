@@ -1,10 +1,10 @@
 ---
 layout: article
 title: New NotebookLM app for Android and iOS
-date: 2025-05-21T20:01:36
+date: 2025-05-20T20:01:36+01:00
 author: "Badie Badie "
 banner: /article-banners/articleimage57.png
-slug: google-notebook-lm
+slug: new-notebookLM-app-for-android-and-iOS
 ---
 Google just released an app for NotebookLM on the Play Store and the App Store. 
 
