@@ -1,10 +1,10 @@
 ---
 layout: article
-title: What to expect from dub dub
+title: What to expect from wwdc25
 date: 2025-05-22T20:22:51
 author: Badie Badie
 banner: /article-banners/wwdc-2025.png
-slug: what-to-expect-from-dub-dub
+slug: what-to-expect-from-wwdc25
 ---
 WWDC25 is just around the corner and we are all hyped to see what Apple has in store for us…
 
