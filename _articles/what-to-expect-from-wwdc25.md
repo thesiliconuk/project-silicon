@@ -1,6 +1,6 @@
 ---
 layout: article
-title: What to expect from wwdc25
+title: What to Expect from WWDC 25
 date: 2025-05-22T20:22:51
 author: Badie Badie
 banner: /article-banners/wwdc-2025.png
