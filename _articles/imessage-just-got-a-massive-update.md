@@ -1,10 +1,10 @@
 ---
 layout: article
-title: "imessage just got a massive update "
+title: imessage gets massive changes
 date: 2025-06-10T20:23:40
 author: "Badie BADIE "
 banner: /article-banners/img_1062.png
-slug: imessage-just-got-a-massive-update
+slug: imessage-gets-massive-changes
 ---
 **The new iMessage app is my favourite feature of dub dub this year** 
 
