@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Say bye bye to these watch faces
+title: say bye bye to these watch faces
 date: 2025-06-10T20:42:00
 author: Badie Badie
 banner: /article-banners/articleimage58.png
