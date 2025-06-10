@@ -4,7 +4,7 @@ title: imessage gets massive changes
 date: 2025-06-10T20:23:40
 author: "Badie BADIE "
 banner: /article-banners/img_1062.png
-slug: imessage-gets-massive-changes
+slug: imessage-gets-massive-changes-in-ios26
 ---
 **The new iMessage app is my favourite feature of dub dub this year** 
 
