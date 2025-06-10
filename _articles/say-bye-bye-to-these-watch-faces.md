@@ -4,7 +4,7 @@ title: say bye bye to these watch faces
 date: 2025-06-10T20:42:00
 author: Badie Badie
 banner: /article-banners/articleimage58.png
-slug: say-bye-bye-to-these-watch-faces
+slug: say-byebye-to-these-watch-faces
 ---
 Say bye bye to the following watch faces
 
