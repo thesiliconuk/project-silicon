@@ -1,6 +1,6 @@
 ---
 layout: article
-title: iMessages Get Big Changes
+title: iMessages Gets Big Changes
 date: 2025-06-10T20:23:40
 author: "Badie BADIE "
 banner: /article-banners/img_1062.png
