@@ -1,14 +1,16 @@
 ---
 layout: article
-title: System Test
-date: 2025-07-26T17:01:19+01:00
-author: Test
-banner: /article-banners/update.jpg
+title: Where we been?
+date: 2025-08-07T09:30:23+01:00
+author: thesilicon team
+banner: /article-banners/articleimage59.png
 ---
-# This is a system test. 
+Hello there! Many of you might be qasking where we have been recently as we have not uploaded an article in a long time. 
 
-This is a system **test.**
+Well, we are unfortunately facing internal conflict about where we plan for thesilicon to go and our goals for the future. This means that we have paused article writing, this also means that we will not be posting articles that frequently due to differences in our team. This essentially means that we will only cover big news events and cover those instead of more frequent updates as we have positioned our goal more onto earning revenue through sponsorships rather than frequent articles. This is all a result of miscommunication between a member of our three person team who we will not name but I just want to advise all small businesses to make sure the people thta you are working with are trustworthy and capable of delivering what you expect or you will come with situations like this
 
+Finally, I want to thank the supporters of thesilicon who would constantly read articles, we really appreciate it and hope you stay around to see what happens to thesilicon in the future. 
 
+Thank you for being patient with us,
 
-
+Badie Badie, Rohan Kharel and Charles Vompiris
