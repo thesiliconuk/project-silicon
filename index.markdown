@@ -78,7 +78,7 @@ title: The Silicon
     <h2 class="home-callout">For absolutely free!</h2>
 </div>
 
-<h1 class="articlelist-policy">By using this website, you agree to our <a href="/policies/comment-policy.pdf">Comment Policy</a>.</h1>
+<h1 class="articlelist-policy">By using this website, you agree to our <a href="/legal/privacy">Privacy Policy</a> and <a href="/legal/cookies">use of Cookies</a>.</h1>
 
 <div class="articlelist-container">
   {% assign sorted_articles = site.articles | sort: "date" | reverse %}
@@ -94,6 +94,9 @@ title: The Silicon
     </div>
   {% endfor %}
 </div>
+
+<p style="text-align: center; color: #89BEFF;"><a href="/legal/privacy" style="color: #89BEFF;">Privacy</a> <a href="/legal/cookies" style="color: #89BEFF;">Cookies</a></p>
+
 
 <script src="/scripts/linkeEligibility.js" type="module"></script>
 

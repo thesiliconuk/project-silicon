@@ -47,7 +47,7 @@ h1 {
     color: #89BEFF;
 }
 
-h2, h3, h4, h5, h6, p, a, div {
+h2, h3, h4, h5, h6, p, a, div, li, ul    {
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     color: white;

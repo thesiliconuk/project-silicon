@@ -13,60 +13,21 @@
 </script>
 
     <meta charset="UTF-8">
-    <title>Natural | The Silicon</title>
+    <title>Privacy | The Silicon</title>
     <link rel="stylesheet" href="/styles/main.css"> 
-    <link rel="stylesheet" href="/styles/natural.css">
-
+    <link rel="stylesheet" href="/styles/about.css">
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/5ef0c294a5.js" crossorigin="anonymous"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1331103242570956"
      crossorigin="anonymous"></script>
 
-
-    <script src="/scripts/scrollreveal.js"></script>
     <script>
         // Reset the scroll position on page load
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
-            fetchWallpapers();
         });
-
-        // Add event listener to elements with class 'wallpaper-lets-go-link'
-        document.querySelectorAll('.wallpaper-lets-go-link').forEach(element => {
-            element.addEventListener('click', function() {
-                const link = element.getAttribute('href');
-                window.location.href = link;
-            });
-        });
-
-        // Fetch wallpapers from the JSON file
-        async function fetchWallpapers() {
-            try {
-                const response = await fetch('/images/natural/wallpapers.json', {
-                    method: 'GET'
-                });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                displayWallpapers(data);
-            } catch (error) {
-                console.error('Error fetching wallpapers:', error);
-            }
-        }
-
-        function displayWallpapers(wallpapers) {
-            const container = document.getElementById('wallpapers-container');
-            wallpapers.forEach(wallpaper => {
-                const wallpaperElement = document.createElement('div');
-                wallpaperElement.className = 'wallpaper';
-                wallpaperElement.innerHTML = `
-                    <img src="${wallpaper.url}" alt="${wallpaper.name}">
-                `;
-                container.appendChild(wallpaperElement);
-            });
-        }
     </script>
 </head>
 <body>
@@ -110,13 +71,31 @@
         </a>
     </header>
 
-    <p style="
-    text-align: center;
-    margin-top: 150px;
-    font-size: 25px;"
-    >Images photographed by the editors of thesilicon to give your device a calming and welcoming feel</p>
-
-    <div id="wallpapers-container" style="text-align: center; margin-top: 50px;"></div>
+    <div style="max-width: 1000px; margin: 0 auto; padding-top: 100px;">
+        <h1 id="cookies-policy">Cookies Policy</h1>
+        <p><strong>Last updated:</strong> September 11, 2025</p>
+        <p>This Cookies Policy explains what Cookies are, how We use them, and Your choices regarding Cookies.</p>
+        <h2>What Are Cookies?</h2>
+        <p>Cookies are small text files placed on Your device by websites You visit. They are widely used to make websites work efficiently and to provide information to site owners.</p>
+        <h2>Types of Cookies We Use</h2>
+        <ul>
+            <li><strong>Necessary Cookies:</strong> Required for core functions (e.g., login, security).</li>
+            <li><strong>Preferences Cookies:</strong> Remember Your settings (e.g., language, login info).</li>
+            <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with the site. Example: Google Analytics.</li>
+            <li><strong>Advertising Cookies:</strong> Used to deliver ads relevant to You. Example: Google AdSense / DoubleClick cookie.</li>
+        </ul>
+        <h2>Third-Party Cookies</h2>
+        <p>We use third-party services (e.g., Google) that may place Cookies on Your device for analytics and advertising. These third parties may track activity across websites.</p>
+        <h2>Your Choices About Cookies</h2>
+        <ul>
+            <li>You can set Your browser to refuse all Cookies or notify You when a Cookie is being sent.</li>
+            <li>If You disable Cookies, some site features may not work properly.</li>
+            <li>You can manage consent for analytics and advertising cookies using our cookie banner.</li>
+            <li>To opt out of Google personalized ads, visit <a href="https://www.google.com/settings/ads">Google Ads Settings</a>.</li>
+        </ul>
+        <h2>More Information</h2>
+        <p>For more details on Cookies, see <a href="https://www.allaboutcookies.org">All About Cookies</a>.</p>
+    </div>
 
     <p style="text-align: center; color: #89BEFF;"><a href="/legal/privacy" style="color: #89BEFF;">Privacy</a> <a href="/legal/cookies" style="color: #89BEFF;">Cookies</a></p>
 
