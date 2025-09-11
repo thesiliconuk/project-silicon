@@ -27,12 +27,8 @@ body {
     color: rgb(1, 1, 1);
     margin-left: 2%;
     margin-right: 2%;
-    font-size: 150%;
+    font-size: 125%;
     transition: all 0.25s ease-in-out;
-}
-
-.navbar-link:hover {
-    font-size: 160%;
 }
 
 .special-navbar-link {
@@ -41,12 +37,8 @@ body {
     color: rgb(1, 1, 1);
     margin-left: 2%;
     margin-right: 2%;
-    font-size: 150%;
+    font-size: 125%;
     transition: all 0.25s ease-in-out;
-}
-
-.special-navbar-link:hover {
-    font-size: 160%;
 }
 
 h1 {

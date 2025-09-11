@@ -19,6 +19,8 @@ title: The Silicon
 <link rel="stylesheet" href="/styles/homescreen.css">
 <link rel="stylesheet" href="/styles/articlelist.css">
 
+<link rel="icon" type="image/x-icon" href="/images/logo.png">
+
 <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css2?family=Kalam" rel="stylesheet">
 
